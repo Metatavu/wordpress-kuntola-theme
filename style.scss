@@ -1,0 +1,218 @@
+/*
+Theme Name: Kuntola Theme
+Theme URI: github.com/Metatavu/wordpress-kuntola-theme
+Author: Metatavu Oy
+Author URI: https://www.metatavu.fi
+Description: wordpress theme for Kuntola 
+Version: 1.0
+Template: wp-bootstrap-starter
+License: GNU Affero General Public License
+License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
+Text Domain: kuntola
+Tags: kuntola
+
+Kuntola is based on WP Bootstrap Starter theme.
+*/
+
+$header-background-color: #000;
+$header-text-color: #fff;
+$header-register-button-border: 2px solid #fff;
+$subheader-background-color: #fff;
+$subheader-text-color: #000;
+$calltoaction-link-color: #000;
+$calltoaction-button-text-color: #fff;
+$calltoaction-button-background-color: #0f74a2;
+$profile-text-color: #fff;
+$profile-button-background-color: #0e75a2;
+$profile-button-text-color: #fff;
+$footer-background: #fff;
+$footer-banner-text-color: #fff;
+$footer-banner-button-border: 2px solid #fff;
+$footer-banner-button-text-color: #fff;
+$footer-banner-button-background-color: rgba(0, 0, 0, 0);
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header#masthead {
+  background-color: $header-background-color;
+}
+
+#page-sub-header {
+  margin-top: 0;
+}
+
+body #masthead .navbar-nav > li.nav-item > a {
+  text-transform: uppercase;
+  color: $header-text-color;
+  font-size: 14px;
+  padding-top: 41px;
+  padding-bottom: 25px;
+  font-weight: bold;
+  padding-right: 45px;
+}
+
+body #masthead .navbar-nav > li.nav-item > a[href="/wp-login.php"] {
+  border: $header-register-button-border;
+  padding: 21px 26px;
+  margin-top: 19px;
+  margin-left: 22px;
+}
+
+body #page-sub-header .container h1 {
+  background: $subheader-background-color;
+  color: $subheader-text-color;
+  font-size: 48px;
+  padding: 13px 25px;
+  text-align: left;
+  margin: 1px;
+  float: left;
+  line-height: 48px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+body #page-sub-header .text-container {
+  margin-top: 200px;
+}
+
+body #page-sub-header .image-container {
+  padding-top: 10px;
+  padding-left: 80px; 
+}
+
+.calltoaction-container {
+  padding-top: 70px;
+}
+
+.calltoaction-container h2 {
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.calltoaction-container p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.calltoaction-container a {
+  color: $calltoaction-link-color;
+  text-decoration: underline;
+}
+
+.calltoaction-container .btn-primary {
+  color: $calltoaction-button-text-color;
+  padding: 35px 40px;
+  text-transform: uppercase;
+  font-size: 27px;
+  background-color: $calltoaction-button-background-color;
+  border: none;
+  border-radius: 0;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-left: 60px;
+  text-decoration: none;
+}
+
+.profile-container {
+
+
+  * {
+    color: $profile-text-color;
+  }
+
+  h2 {
+    font-size: 34px;
+    text-transform: uppercase;
+    padding-top: 95px;
+    padding-bottom: 90px;
+  }
+
+  ul {
+    padding-left: 1em;
+  }
+
+  .btn-primary {
+    background-color: $profile-button-background-color;
+    color: $profile-button-text-color;
+    padding: 28px;
+    border: none;
+    border-radius: 0;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 100px;
+  }
+}
+
+#primary {
+  
+  h2.entry-title {
+    border-bottom: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 58px;
+    margin-bottom: 48px;
+  }
+
+  .entry-content {
+    font-size: 20px;
+  }
+
+}
+
+footer#footer-banner {
+
+  .footer-image-container {
+    margin-top: 135px;
+    margin-bottom: 145px;
+    text-align: right;
+  }
+
+  .footer-text-container {
+    * {
+      color: $footer-banner-text-color;
+    }
+
+    h2 {
+      font-size: 38px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 180px;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      border: $footer-banner-button-border;
+      background-color: $footer-banner-button-background-color;
+      color: $footer-banner-button-text-color;  
+      padding: 23px;
+      border-radius: 0;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+  }
+
+}
+
+footer#colophon {
+  background: $footer-background !important;
+  margin-top: 63px;
+  margin-bottom: 34px;
+}
+

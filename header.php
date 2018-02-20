@@ -109,7 +109,6 @@
         <div class="row">
           <div class="col">  
             <?php echo apply_filters( 'the_content', $profilePage->post_content ); ?>
-            <a class="btn btn-primary" href="/wp-login.php">Rekisteröidy</a>
           </div>
 
           <div class="col profile-image-container">  

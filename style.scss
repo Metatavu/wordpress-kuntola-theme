@@ -30,6 +30,15 @@ $footer-banner-text-color: #fff;
 $footer-banner-button-border: 2px solid #fff;
 $footer-banner-button-text-color: #fff;
 $footer-banner-button-background-color: rgba(0, 0, 0, 0);
+$query-radio-input-border: 2px solid #0e75a2;
+$query-radio-input-size: 36px;
+$query-radio-field-border: 1px solid #e1e7eb;
+$query-radio-input-checked-background: #039fd2;
+$query-radio-input-checked-border-width: 8px;
+$query-radio-input-checked-border-color: #fff;
+$query-page-title-color: #2d85ad;
+$query-radio-text-color: #000;
+$query-navigation-text-color: #0e75a2;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
 
@@ -216,3 +225,103 @@ footer#colophon {
   margin-bottom: 34px;
 }
 
+.metaform { 
+
+  .metaform-pages-container {
+    font-weight: bold;    
+  }
+
+  h2 {
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .form-group label {
+    color: $query-page-title-color;
+    font-size: 28px;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 80px;
+  }
+
+  fieldset {
+    border: none;     
+  }
+
+  .form-check {
+    border: $query-radio-field-border;
+    display: inline-block;
+    width: 20%;
+    height: 200px;
+    padding: 15px;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+
+    input {
+      opacity: 0;
+    }
+
+    label {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    label span {
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: bold;
+      min-height: 80px;
+      display: block;
+      margin-top: 40px;
+      margin-left: 40px;
+      margin-right: 40px;
+      color: $query-radio-text-color;
+    }
+
+    label::after {
+      border: $query-radio-input-border;
+      content: '';
+      width: $query-radio-input-size;
+      height: $query-radio-input-size;
+      border-radius: $query-radio-input-size / 2;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input:active + label::after,
+    input:checked + label::after {
+      width: $query-radio-input-size + $query-radio-input-checked-border-width;
+      height: $query-radio-input-size + $query-radio-input-checked-border-width;
+      border-radius: ($query-radio-input-size + $query-radio-input-checked-border-width) / 2;
+      background: $query-radio-input-checked-background;
+      border-width: $query-radio-input-checked-border-width;
+      border-style: double;
+      border-color: $query-radio-input-checked-border-color;
+      margin-top: -$query-radio-input-checked-border-width / 2;
+    }
+
+  }
+
+  .metaform-prev, 
+  .metaform-next {
+    color: $query-navigation-text-color;
+    text-transform: uppercase;
+  }
+
+  .metaform-prev span {
+    padding-left: 10px;
+  }
+
+  .metaform-next span {
+    padding-right: 10px;
+  }
+
+}

@@ -71,17 +71,12 @@ const sections = questions.map((question, pageIndex) => {
 });
 
 
-const preSections = [{
-  "fields": [{
-    "type": "html",
-    "html": `<div class="row"><div class="col text-center"><div class="metaform-pages-container"><span class="metaform-page">1</span><span>/</span><span class="metaform-pages">${questions.length}</span></div></div></div>`
-  }]
-}];
+const preSections = [];
 
 const postSections = [{
   "fields": [{
     "type": "html",
-    "html": `<div class="row"><div class="col text-right"><a class="metaform-prev" href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i><span>Edellinen</span></a></div><div class="col text-left"><a class="metaform-next" href="#"><span>Seuraava</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a></div></div><input type="hidden" name="page-count" value="${questions.length}"/>`
+    "html": `<input type="hidden" name="page-count" value="${questions.length}"/>`
   }, {
     "type": "hidden",
     "name": "page"

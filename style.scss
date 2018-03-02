@@ -225,10 +225,34 @@ footer#colophon {
   margin-bottom: 34px;
 }
 
-.metaform { 
+.metaform-container {
 
   .metaform-pages-container {
     font-weight: bold;    
+    margin-bottom: 20px;
+  }
+
+  .metaform-prev, 
+  .metaform-next {
+    color: $query-navigation-text-color;
+    text-transform: uppercase;
+  }
+
+  .metaform-prev span {
+    padding-left: 10px;
+  }
+
+  .metaform-next span {
+    padding-right: 10px;
+  }
+}
+
+.metaform { 
+
+  min-height: 570px;
+
+  section {
+    position: absolute;
   }
 
   h2 {
@@ -308,20 +332,6 @@ footer#colophon {
       margin-top: -$query-radio-input-checked-border-width / 2;
     }
 
-  }
-
-  .metaform-prev, 
-  .metaform-next {
-    color: $query-navigation-text-color;
-    text-transform: uppercase;
-  }
-
-  .metaform-prev span {
-    padding-left: 10px;
-  }
-
-  .metaform-next span {
-    padding-right: 10px;
   }
 
 }

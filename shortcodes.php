@@ -1,0 +1,139 @@
+<?php
+
+  /**
+   * Returns all answer to a metaform
+   * 
+   * @param int $id metaform id
+   * 
+   * @return array all answer to a metaform
+   */
+  function getMetaformValues($id) {
+    global $wpdb;
+    $select = "SELECT $wpdb->usermeta.meta_value FROM $wpdb->usermeta WHERE $wpdb->usermeta.meta_key = 'metaform-${id}-values'";
+    $results = $wpdb->get_results($select);
+
+    $values = [];
+
+    foreach ($results as $result) {
+      $values[] = json_decode($result->meta_value, true);
+    }
+
+    return $values;
+  }
+
+  /**
+   * Returns category averages for metaform answers
+   * 
+   * @param array $categoryMap category map
+   * @param array $values array of user value arrays
+   * 
+   * @return array value averages
+   */
+  function getMetaformCategoryAverageValues($categoryMap, $values) {
+    $skipKeys = ['page', 'page-count'];
+
+    foreach ($values as $userValues) {
+      foreach ($userValues as $key => $value) {
+        $intvalue = intval($value);
+
+        if (in_array ($key , $skipKeys)) {
+          continue;
+        }
+
+        $category = $categoryMap[$key];
+
+        if ($averageArrays[$category]) {
+          $averageArrays[$category][] = $intvalue;
+        } else {
+          $averageArrays[$category] = [$intvalue];
+        }
+
+      }
+    }
+
+    foreach ($averageArrays as $key => $averageArray) {
+      $averages[$key] = array_sum($averageArray) / count($averageArray);
+    }
+
+    return $averages;
+  }
+
+  add_action( 'wp_enqueue_scripts', function () {
+
+    add_shortcode('metaform_averages', function ($tagAttrs) {
+      wp_enqueue_script('chartjs', '//cdn.metatavu.io/libs/chart-js/2.5.0/Chart.min.js');
+
+      $categoryMap = [
+        "ansaitakseni-elantoni" => "Muiden odotukset",
+        "koska-se-auttaaminua-rentoutumaan" => "Henkinen hyvinvointi",
+        "koska-se-on-mielenkiintoista" => "Huvi ja nautinto",
+        "jotta-voisin-liikkua-yhdessa-muiden-kanssa" => "Yhteenkuuluvuus",
+        "kehittyakseni" => "Osaaminen ja taitojen hallitseminen",
+        "ollakseni-paremmassa-kunnossa-kuin-muut" => "Kilpailullisuus/ego",
+        "koska-minulle-maksetaan-siita" => "Muiden odotukset",
+        "koska-nautin-ajanvietosta-muiden-seurassa-liikkuen" => "Yhteenkuuluvuus",
+        "koska-haluan-hallita-stressia-paremmin" => "Henkinen hyvinvointi",
+        "koska-sen-avulla-keho-pysyy-terveena" => "Fyysinen hyvinvointi",
+        "koska-se-saa-lihakset-nayttamaan-paremmilta" => "Ulkonäkö",
+        "ollakseni-fyysisesti-hyvassa-kunnossa" => "Fyysinen hyvinvointi",
+        "koska-se-tekee-minut-onnelliseksi" => "Huvi ja nautinto",
+        "unohtaakseni-tyo-arkihuolet" => "Henkinen hyvinvointi",
+        "yllapitaakseni-fyysista-terveyttani" => "Fyysinen hyvinvointi",
+        "parantaakseni-nykyisia-taitojani" => "Osaaminen ja taitojen hallitseminen",
+        "ollakseni-ryhman-paras" => "Kilpailullisuus/ego",
+        "hoitaakseni-sairautta-tai-vaivaa" => "Muiden odotukset",
+        "parantaakseni-suorituskykyani-verrattuna-aikaisempiin-suorituksiini" => "Osaaminen ja taitojen hallitseminen",
+        "koska-se-on-yhteista-minulle-ja-ystavilleni" => "Yhteenkuuluvuus",
+        "koska-muiden-mielesta-tarvitsen-liikuntaa" => "Muiden odotukset",
+        "koska-se-toimii-stressin-laukaisijana" => "Henkinen hyvinvointi",
+        "parantaakseni-kehoni-muotoa" => "Ulkonäkö",
+        "oppiakseni-uusia-taitoja-tai-kokeillakseni-uusia-liikuntamuotoja" => "Osaaminen ja taitojen hallitseminen",
+        "koska-se-on-hauskaa" => "Huvi ja nautinto",
+        "laakarin-fysioterapeutin-tms-maarayksesta" => "Muiden odotukset",
+        "tehdakseni-kuntoni-eteen-enemman-kuin-muut-ihmiset" => "Kilpailullisuus/ego",
+        "koska-se-pitaa-minut-terveena" => "Fyysinen hyvinvointi",
+        "kilpaillakseni-muiden-kanssa" => "Kilpailullisuus",
+        "koska-voin-samalla-keskustella-ystavieni-kanssa" => "Yhteenkuuluvuus",
+        "pitaakseni-ylla-nykyista-taitotasoani" => "Osaaminen ja taitojen hallitseminen",
+        "parantaakseni-ulkonakoani" => "Ulkonäkö",
+        "parantaakseni-kestavyyskuntoani" => "Fyysinen hyvinvointi",
+        "koska-nautin-liikkumisesta" => "Huvi ja nautinto",
+        "koska-liikunta-saa-ajatukset-muualle" => "Henkinen hyvinvointi",
+        "pudottaakseni-painoa-jotta-nayttaisin-paremmalta" => "Ulkonäkö",
+        "koska-koen-sen-hauskana" => "Huvi ja nautinto",
+        "ollakseni-ystavieni-kanssa" => "Yhteenkuuluvuus",
+        "ollakseni-paremmassa-kunnossa-kuin-muut" => "Kilpailullisuus/ego",
+        "koska-se-auttaa-minua-yllapitamaan-kehoni-jantevana" => "Ulkonäkö"
+      ];
+
+      $categories = [];
+      
+      foreach ($categoryMap as $key => $value) {
+        if (!in_array ($value , $categories)) {
+          $categories[] = $value;
+        }
+      }
+      
+      $attrs = shortcode_atts([
+        'id' => 0
+      ], $tagAttrs);
+
+      $id = $attrs['id'];
+      $averageArrays = [];
+
+      $values = getMetaformValues($id);
+      
+      $userValues = json_decode(get_user_meta(wp_get_current_user()->ID, "metaform-$id-values", true), true);
+      
+      $averages = getMetaformCategoryAverageValues($categoryMap, $values);
+      $userAverages = getMetaformCategoryAverageValues($categoryMap, [$userValues]);
+
+      echo sprintf('<canvas id="metaform-averages" width="400" height="400" data-values="%s"/>', htmlspecialchars(json_encode([
+        userAverages => $userAverages,
+        averages => $averages,
+        categories => $categories
+      ])));
+    });
+  } , 99);
+  
+?>

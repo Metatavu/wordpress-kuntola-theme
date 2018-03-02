@@ -1,12 +1,15 @@
 (function ($) {
 
-  function setMetaformPage(metaform, page) {
+  function setMetaformPage(metaform, page, lastPageCallback) {
     var pageInput = $(metaform).find('input[name="page"]');
-    var max = parseInt(metaform.find('input[name="page-count"]').val()) - 1;
+    var max = parseInt(metaform.find('input[name="page-count"]').val());
     var page = Math.min(Math.max((parseInt(page) || 0), 0), max);
-    pageInput.val(page);
-    pageInput.change();
-    metaform.closest('.metaform-container').find('.metaform-page').text(page + 1);
+    if (page >= max) {
+      lastPageCallback();
+    } else {
+      pageInput.val(page).change();
+      metaform.closest('.metaform-container').find('.metaform-page').text(page + 1);
+    }
   }
 
   function getMetaformPage(metaform) {
@@ -20,7 +23,30 @@
   function changeMetaformPage(metaform, delta) {
     $(metaform).metaform('option', 'animation.hide.options.direction', delta > 0 ? 'left' : 'right');
     $(metaform).metaform('option', 'animation.show.options.direction', delta > 0 ? 'right' : 'left');
-    setMetaformPage(metaform, getMetaformPage(metaform) + delta);
+    setMetaformPage(metaform, getMetaformPage(metaform) + delta, function () {
+      saveMetaformRevision(metaform, function (err) {
+        if (err) {
+          alert(err);
+        } else {
+          window.location = '/profile';
+        }
+      });
+    });
+  }
+
+  function saveMetaformRevision(metaform, callback) {
+    var id = $(metaform).closest('.metaform-container').attr('data-id');
+    var ajaxurl = metaformwp.ajaxurl;
+
+    $.post(ajaxurl, {
+      'action': 'save_metaform_revision',
+      'id': id
+    }, function (response) { 
+      callback(null);
+    })
+    .fail(function (response) {
+      callback(response.responseText || response.statusText || "Unknown error occurred");
+    });
   }
 
   function saveMetaform(metaform, callback) {
@@ -49,6 +75,15 @@
 
   $(document).on('metaformcreate', function (event, ui) {
     var metaform = $(event.target);
+
+    var pageCount = getMetaformPageCount(metaform);
+    var pages = $('<div class="row"><div class="col text-center"><div class="metaform-pages-container"><span class="metaform-page">1</span><span>/</span><span class="metaform-pages">' + pageCount + '</span></div></div></div>');
+    var navigation = $('<div class="row"><div class="col text-right"><a class="metaform-prev" href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i><span>Edellinen</span></a></div><div class="col text-left"><a class="metaform-next" href="#"><span>Seuraava</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a></div></div><input type="hidden" name="page-count" value="' + pageCount + '"/>');
+    
+    metaform.closest('.metaform-container')
+      .prepend(pages)
+      .append(navigation);
+
     var valuesArray = metaform.metaform('val', true);
     for (var i = 0; i < valuesArray.length; i++) {
       var name = valuesArray[i].name;
@@ -58,14 +93,23 @@
       }
     }
 
-    var pageCount = getMetaformPageCount(metaform);
-
-    var pages = $('<div class="row"><div class="col text-center"><div class="metaform-pages-container"><span class="metaform-page">1</span><span>/</span><span class="metaform-pages">' + pageCount + '</span></div></div></div>');
-    var navigation = $('<div class="row"><div class="col text-right"><a class="metaform-prev" href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i><span>Edellinen</span></a></div><div class="col text-left"><a class="metaform-next" href="#"><span>Seuraava</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a></div></div><input type="hidden" name="page-count" value="' + pageCount + '"/>');
-    
-    metaform.closest('.metaform-container')
-      .prepend(pages)
-      .append(navigation);
+    $(metaform).metaform('option', 'animation', {
+      framework: 'jquery-ui',
+      hide: {
+        effect: 'slide',
+        duration: 400,
+        options: {
+          direction: 'left'
+        }
+      },
+      show: {
+        effect: 'slide',
+        duration: 400,
+        options: {
+          direction: 'right'
+        }
+      }
+    });
 
     $(document).on('change', '.form-check-input', function (event) {
       event.preventDefault();
@@ -98,6 +142,39 @@
     event.preventDefault();
     var link = $(event.target);
     changeMetaformPage(link.closest('.metaform-container').find('.metaform'), -1);
+  });
+
+  $(document).ready(function () {
+    $('#metaform-averages').each(function (index, element) {
+      var ctx = element.getContext('2d');
+      var values = JSON.parse($(element).attr('data-values'));
+      var options = {};
+      var labels = values.categories;
+      var datasUserAverages = [];
+      var datasAverages = [];
+
+      $.each(labels, function (index, label) {
+        datasUserAverages.push((parseFloat(values.userAverages[label]) || 0) + 2);
+        datasAverages.push((parseFloat(values.averages[label]) || 0) + 2);
+      });
+
+      var chart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Sinä',
+            data: datasUserAverages,
+            backgroundColor: "#2d85ad"
+          }, {
+            label: 'Keskiarvo',
+            data: datasAverages,
+            backgroundColor: "#000"
+          }]
+        },
+        options: options
+      });
+    });
   });
 
 })(jQuery);

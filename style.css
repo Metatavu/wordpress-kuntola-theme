@@ -251,7 +251,7 @@ footer#footer-banner {
         font-size: 25px; } }
   footer#footer-banner .footer-text-container .btn-primary {
     border: 2px solid #fff;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     color: #fff;
     padding: 23px;
     border-radius: 0;
@@ -280,10 +280,11 @@ footer#colophon {
 .metaform-container .metaform-next span {
   padding-right: 10px; }
 
+.metaform-paged section {
+  position: absolute; }
+
 .metaform {
   min-height: 570px; }
-  .metaform section {
-    position: absolute; }
   .metaform .service-usage-desired .ui-slider-horizontal {
     background: #aaebff; }
   .metaform .ui-widget.ui-widget-content {

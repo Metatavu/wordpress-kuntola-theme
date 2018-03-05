@@ -44,6 +44,8 @@ $metaform-slider-handle-size: 40px;
 $metaform-slider-handle-label-text-color: #0f74a2;
 $metaform-desired-slider-background: #aaebff;
 $metaform-slider-border: 1px solid #0f74a2;
+$profile-result-gradient-color-1: #065595;
+$profile-result-gradient-color-2: #02a0cc;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
 
@@ -390,7 +392,7 @@ footer#colophon {
   min-height: 570px;
 
   section {
-    // position: absolute;
+    position: absolute;
   }
 
   .service-usage-desired .ui-slider-horizontal {
@@ -500,6 +502,23 @@ footer#colophon {
       margin-top: -$query-radio-input-checked-border-width / 2;
     }
 
+  }
+
+}
+
+.result-header-container {
+  h2, h1 {
+   color: #fff !important;
+  }
+  
+  .result-header {
+    padding: 15px 15px;
+    font-size: 37px;
+    background: $profile-result-gradient-color-1;
+    background: -moz-linear-gradient(45deg, $profile-result-gradient-color-1 0%, $profile-result-gradient-color-2 100%);
+    background: -webkit-linear-gradient(45deg, $profile-result-gradient-color-1 0%,$profile-result-gradient-color-2 100%);
+    background: linear-gradient(45deg, $profile-result-gradient-color-1 0%,$profile-result-gradient-color-2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$profile-result-gradient-color-1', endColorstr='$profile-result-gradient-color-2',GradientType=1 );
   }
 
 }

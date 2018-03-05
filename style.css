@@ -239,7 +239,7 @@ footer#footer-banner {
         font-size: 25px; } }
   footer#footer-banner .footer-text-container .btn-primary {
     border: 2px solid #fff;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: #fff;
     padding: 23px;
     border-radius: 0;
@@ -270,6 +270,8 @@ footer#colophon {
 
 .metaform {
   min-height: 570px; }
+  .metaform section {
+    position: absolute; }
   .metaform .service-usage-desired .ui-slider-horizontal {
     background: #aaebff; }
   .metaform .ui-widget.ui-widget-content {
@@ -351,5 +353,16 @@ footer#colophon {
       border-style: double;
       border-color: #fff;
       margin-top: -4px; }
+
+.result-header-container h2, .result-header-container h1 {
+  color: #fff !important; }
+.result-header-container .result-header {
+  padding: 15px 15px;
+  font-size: 37px;
+  background: #065595;
+  background: -moz-linear-gradient(45deg, #065595 0%, #02a0cc 100%);
+  background: -webkit-linear-gradient(45deg, #065595 0%, #02a0cc 100%);
+  background: linear-gradient(45deg, #065595 0%, #02a0cc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$profile-result-gradient-color-1', endColorstr='$profile-result-gradient-color-2',GradientType=1 ); }
 
 /*# sourceMappingURL=style.css.map */

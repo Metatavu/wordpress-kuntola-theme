@@ -175,7 +175,34 @@
     $('#metaform-averages').each(function (index, element) {
       var ctx = element.getContext('2d');
       var values = JSON.parse($(element).attr('data-values'));
-      var options = {};
+      var options = {
+        legend: {
+          position: 'right'
+        },
+        scales: {
+          xAxes: [{
+            position: 'top',
+            ticks: {
+              max: 5,
+              min: 0,
+              stepSize: 1,
+              fontStyle: 'bold',
+              fontColor: '#000',
+              fontSize: 16
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              fontStyle: 'bold',
+              fontColor: '#000',
+              fontSize: 16,
+              callback: function(value, index, values) {
+                  return value.toUpperCase();
+              }
+            }
+          }]
+        }
+      };
       var labels = values.categories;
       var datasUserAverages = [];
       var datasAverages = [];
@@ -192,7 +219,7 @@
           datasets: [{
             label: 'Sinä',
             data: datasUserAverages,
-            backgroundColor: "#2d85ad"
+            backgroundColor: "#039fd2"
           }, {
             label: 'Keskiarvo',
             data: datasAverages,

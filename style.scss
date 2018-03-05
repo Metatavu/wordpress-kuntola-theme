@@ -17,6 +17,7 @@ Kuntola is based on WP Bootstrap Starter theme.
 $header-background-color: #000;
 $header-text-color: #fff;
 $header-register-button-border: 2px solid #fff;
+$header-register-button-background: #000;
 $subheader-background-color: #fff;
 $subheader-text-color: #000;
 $calltoaction-link-color: #000;
@@ -97,12 +98,28 @@ body #masthead .navbar-nav > li.nav-item > a {
   
 }
 
-body #masthead .navbar-nav > li.nav-item > a[href="/wp-login.php"] {
+body #masthead .navbar-nav > li.nav-item > .btn-primary {
   @media (min-width: 992px) {
     border: $header-register-button-border;
-    margin-left: 22px;
     padding: 21px 26px;
     margin-top: 19px;
+    border-radius: 0;
+    background: $header-register-button-background;
+
+    &:active,
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    background: $header-register-button-background;
+    border: 0;
+    padding-top: 20px;
+    padding-bottom: 45px;
+    padding-right: 25px;
+    padding-left: 0.5rem;
   }
 }
 

@@ -419,16 +419,20 @@ footer#colophon {
   }
 }
 
+.metaform-paged {
+
+  section {
+    position: absolute;
+  }
+
+}
+
 .metaform { 
 
   min-height: 380px;
   
   @media (min-width: 992px) {
     min-height: 570px;
-  }
-
-  section {
-    position: absolute;
   }
 
   .service-usage-desired .ui-slider-horizontal {

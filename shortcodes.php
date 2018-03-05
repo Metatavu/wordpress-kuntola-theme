@@ -186,10 +186,10 @@
         <div class="jumbotron jumbotron-fluid result-header-container" style="background-image: url(<?php echo esc_attr(get_theme_mod('profile_banner_background' )); ?>)">
           <div class="container">
             <div class="row">
-              <div class="col-5">
+              <div class="col-lg-5">
                 <img src="<?php bloginfo('stylesheet_url'); ?>../../gfx/<?php echo sanitize_title($highestCategoryName) ?>.png" />
               </div>
-              <div class="col-7">
+              <div class="col-lg-7">
                 <div class="row">
                   <h2>Kiitos vastauksista!<br/>Hyvinvointimoottorisi on:</h2>
                 </div>
@@ -200,8 +200,10 @@
             </div>
           </div>
         </div>
+        
         <?php
         echo '<div class="container">';
+        echo '<h1 class="center-block text-center">Tulokset</h1>';
         echo sprintf('<canvas id="metaform-averages" width="400" height="400" data-values="%s"/>', htmlspecialchars(json_encode([
           userAverages => $userAverages,
           averages => $averages,

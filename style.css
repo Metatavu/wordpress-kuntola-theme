@@ -368,6 +368,10 @@ footer#colophon {
 
 .result-header-container h2, .result-header-container h1 {
   color: #fff !important; }
+  @media (max-width: 991.98px) {
+    .result-header-container h2, .result-header-container h1 {
+      margin-left: auto;
+      margin-right: auto; } }
 .result-header-container .result-header {
   padding: 15px 15px;
   font-size: 37px;

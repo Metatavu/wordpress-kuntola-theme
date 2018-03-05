@@ -524,8 +524,14 @@ footer#colophon {
 }
 
 .result-header-container {
+  
   h2, h1 {
    color: #fff !important;
+
+    @media (max-width: 991.98px) { 
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   
   .result-header {

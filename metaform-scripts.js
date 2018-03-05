@@ -176,9 +176,10 @@
     $('#metaform-averages').each(function (index, element) {
       var ctx = element.getContext('2d');
       var values = JSON.parse($(element).attr('data-values'));
+      var smallScreen = $( window ).width() < 992 ? true : false;
       var options = {
         legend: {
-          position: 'right'
+          position: smallScreen ? 'top' : 'right'
         },
         scales: {
           xAxes: [{
@@ -196,9 +197,14 @@
             ticks: {
               fontStyle: 'bold',
               fontColor: '#000',
-              fontSize: 16,
+              fontSize: smallScreen ? 10 : 16,
+              display: true,
               callback: function(value, index, values) {
-                  return value.toUpperCase();
+                if (smallScreen && value.length > 15) {
+                  return value.substring(0, 12).toUpperCase() + '...';
+                }
+
+                return value.toUpperCase();
               }
             }
           }]

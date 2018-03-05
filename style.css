@@ -200,6 +200,12 @@ body #page-sub-header .image-container {
         margin-top: 100px;
         margin-bottom: 0px; } }
 
+#content.site-content {
+  padding-top: 15px; }
+  @media (min-width: 992px) {
+    #content.site-content {
+      padding-top: 4.125rem; } }
+
 #primary h2.entry-title {
   border-bottom: none;
   text-transform: uppercase;
@@ -251,7 +257,7 @@ footer#footer-banner {
         font-size: 25px; } }
   footer#footer-banner .footer-text-container .btn-primary {
     border: 2px solid #fff;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: #fff;
     padding: 23px;
     border-radius: 0;
@@ -265,8 +271,11 @@ footer#footer-banner {
 
 footer#colophon {
   background: #fff !important;
-  margin-top: 63px;
-  margin-bottom: 34px; }
+  margin-bottom: 34px;
+  margin-top: 0; }
+  @media (min-width: 992px) {
+    footer#colophon {
+      margin-top: 63px; } }
 
 .metaform-container .metaform-pages-container {
   font-weight: bold;
@@ -280,11 +289,13 @@ footer#colophon {
 .metaform-container .metaform-next span {
   padding-right: 10px; }
 
-.metaform-paged section {
-  position: absolute; }
-
 .metaform {
-  min-height: 570px; }
+  min-height: 380px; }
+  @media (min-width: 992px) {
+    .metaform {
+      min-height: 570px; } }
+  .metaform section {
+    position: absolute; }
   .metaform .service-usage-desired .ui-slider-horizontal {
     background: #aaebff; }
   .metaform .ui-widget.ui-widget-content {
@@ -312,22 +323,29 @@ footer#colophon {
     text-transform: uppercase; }
   .metaform .form-group label {
     color: #2d85ad;
-    font-size: 28px;
+    font-size: 22px;
     text-align: center;
     display: block;
     font-weight: bold;
-    margin-bottom: 80px; }
+    margin-bottom: 15px; }
+    @media (min-width: 992px) {
+      .metaform .form-group label {
+        margin-bottom: 80px;
+        font-size: 28px; } }
   .metaform fieldset {
     border: none; }
   .metaform .form-check {
     border: 1px solid #e1e7eb;
     display: inline-block;
     width: 20%;
-    height: 200px;
+    height: 125px;
     padding: 15px;
     text-align: center;
     vertical-align: top;
     position: relative; }
+    @media (min-width: 992px) {
+      .metaform .form-check {
+        height: 200px; } }
     .metaform .form-check input {
       opacity: 0; }
     .metaform .form-check label {
@@ -338,34 +356,50 @@ footer#colophon {
       right: 0;
       bottom: 0; }
     .metaform .form-check label span {
-      font-size: 16px;
-      text-transform: uppercase;
+      font-size: 10px;
       font-weight: bold;
-      min-height: 80px;
+      min-height: 60px;
       display: block;
-      margin-top: 40px;
-      margin-left: 40px;
-      margin-right: 40px;
+      margin-top: 15px;
       color: #000; }
+      @media (min-width: 992px) {
+        .metaform .form-check label span {
+          padding-left: 15px;
+          padding-right: 15px;
+          min-height: 80px;
+          font-size: 16px;
+          margin-top: 40px;
+          text-transform: uppercase; } }
     .metaform .form-check label::after {
       border: 2px solid #0e75a2;
       content: '';
-      width: 36px;
-      height: 36px;
-      border-radius: 18px;
+      width: 26px;
+      height: 26px;
+      border-radius: 13px;
       display: block;
       margin-left: auto;
       margin-right: auto; }
+      @media (min-width: 992px) {
+        .metaform .form-check label::after {
+          width: 36px;
+          height: 36px;
+          border-radius: 18px; } }
     .metaform .form-check input:active + label::after,
     .metaform .form-check input:checked + label::after {
-      width: 44px;
-      height: 44px;
-      border-radius: 22px;
+      width: 34px;
+      height: 34px;
+      border-radius: 17px;
       background: #039fd2;
       border-width: 8px;
       border-style: double;
       border-color: #fff;
       margin-top: -4px; }
+      @media (min-width: 992px) {
+        .metaform .form-check input:active + label::after,
+        .metaform .form-check input:checked + label::after {
+          width: 44px;
+          height: 44px;
+          border-radius: 22px; } }
 
 .result-header-container h2, .result-header-container h1 {
   color: #fff !important; }

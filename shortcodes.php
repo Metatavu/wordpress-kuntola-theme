@@ -83,7 +83,7 @@
                 <?php echo $metaform->post_title ?>
                 <div class="btn-container">
                   <a class="btn btn-primary" href="<?php the_permalink($metaform)?>">Vastaa</a>
-                  <a class="btn btn-info <?php if (!$answered) { echo 'disabled'; } ?>"  href="<?php echo "/results?query_name=" . $metaform->post_name ?>">Tarkastele vastauksia</a>
+                  <a class="btn btn-info <?php if (!$answered) { echo 'disabled'; } ?>"  href="<?php echo "/results?query_name=" . $metaform->post_name ?>">Tulokset</a>
                 </div>
               </li>
               <?php

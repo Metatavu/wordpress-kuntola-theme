@@ -24,13 +24,19 @@
     $(metaform).metaform('option', 'animation.hide.options.direction', delta > 0 ? 'left' : 'right');
     $(metaform).metaform('option', 'animation.show.options.direction', delta > 0 ? 'right' : 'left');
     setMetaformPage(metaform, getMetaformPage(metaform) + delta, function () {
-      saveMetaformRevision(metaform, function (err) {
-        if (err) {
-          alert(err);
+      saveMetaform(metaform, function (saveErr) {
+        if (saveErr) {
+          alert(saveErr);
         } else {
-          window.location = '/profile';
+          saveMetaformRevision(metaform, function (err) {
+            if (err) {
+              alert(err);
+            } else {
+              window.location = '/profile';
+            }
+          });    
         }
-      });
+      });     
     });
   }
 

@@ -381,4 +381,27 @@ footer#colophon {
   background: linear-gradient(45deg, #065595 0%, #02a0cc 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$profile-result-gradient-color-1', endColorstr='$profile-result-gradient-color-2',GradientType=1 ); }
 
+.profile-page {
+  background: #000;
+  color: #fff; }
+  .profile-page h3 {
+    text-transform: uppercase;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 0; }
+    @media (max-width: 575.98px) {
+      .profile-page h3 {
+        font-size: 14px; } }
+  .profile-page p {
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+  .profile-page .me-profile-btn {
+    margin-left: auto;
+    margin-right: auto;
+    display: block; }
+
 /*# sourceMappingURL=style.css.map */

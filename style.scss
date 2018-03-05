@@ -48,6 +48,9 @@ $metaform-slider-border: 1px solid #0f74a2;
 $profile-result-gradient-color-1: #065595;
 $profile-result-gradient-color-2: #02a0cc;
 
+$profile-page-background-color: #000;
+$profile-page-text-color: #fff;
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
 
 body {
@@ -544,4 +547,35 @@ footer#colophon {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$profile-result-gradient-color-1', endColorstr='$profile-result-gradient-color-2',GradientType=1 );
   }
 
+}
+
+.profile-page {
+  background: $profile-page-background-color;
+  color: $profile-page-text-color;
+  
+  h3 {
+    text-transform: uppercase;
+    color: $profile-page-text-color;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 0;
+    
+    @media (max-width: 575.98px) { 
+      font-size: 14px;
+    }
+  }
+  
+  p {
+    color: $profile-page-text-color;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .me-profile-btn {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }

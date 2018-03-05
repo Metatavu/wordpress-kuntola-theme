@@ -97,9 +97,13 @@ function getMetaformUserPointsByCategory($categoryName) {
   return $result;
 }
 
+add_filter( 'body_class', function( $classes ) {
+  return array_merge( $classes, ['profile-page']);
+});
+
 get_header(); ?>
 
-	<section id="primary" class="content-area col-sm-12 col-lg-8">
+	<section id="primary" class="content-area col">
 		<main id="main" class="site-main" role="main">
                   <?php
                     $propertiesMaxPoints = getMetaformMaxPointsByCategory("ominaisuudet");
@@ -113,15 +117,47 @@ get_header(); ?>
                     $healthUserPoints = getMetaformUserPointsByCategory("terveys");
                     $servicesUserPoints = getMetaformUserPointsByCategory("palvelut");
                     $motivationUserPoints = getMetaformUserPointsByCategory("minä");
-                    
-                    echo ('<a href="/queries?form_category=ominaisuudet"><h1> Ominaisuudet: '. $propertiesUserPoints .' / ' . $propertiesMaxPoints . '</h1></a>');
-                    echo ('<a href="/queries?form_category=käyttäytyminen"><h1> Käyttäytyminen: '. $behaviourUserPoints .' / ' . $behaviourMaxPoints . '</h1></a>');
-                    echo ('<a href="/queries?form_category=terveys"><h1> Terveys: '. $healthUserPoints .' / ' . $healthMaxPoints . '</h1></a>');
-                    echo ('<a href="/queries?form_category=palvelut"><h1> Palveluni: '. $servicesUserPoints .' / ' . $healthMaxPoints . '</h1></a>');
-                    echo ('<a href="/queries?form_category=minä"><h1> Minä: '. $motivationUserPoints .' / ' . $motivationMaxPoints . '</h1></a>');
                   ?>
+                  
+                  <div class="row">
+                    <div class="col">
+                      <a href="/queries?form_category=ominaisuudet">
+                        <h3>Ominaisuuteni</h3>
+                        <p><?php echo $propertiesUserPoints .' / ' . $propertiesMaxPoints ?></p>
+                      </a>
+                    </div>
+                    <div class="col">
+                      <a href="/queries?form_category=käyttäytyminen">
+                        <h3>Käyttäytymiseni</h3>
+                        <p><?php echo $behaviourUserPoints .' / ' . $behaviourMaxPoints ?></p>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <a href="/queries?form_category=minä">
+                        <img class="me-profile-btn" src="<?php bloginfo('stylesheet_url'); ?>../../gfx/profile-center-btn.png" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <a href="/queries?form_category=terveys">
+                        <h3>Terveyteni</h3>
+                        <p><?php echo $healthUserPoints .' / ' . $healthMaxPoints ?></p>
+                      </a>
+                    </div>
+                    <div class="col">
+                      <a href="/queries?form_category=palvelut">
+                        <h3>Palveluni</h3>
+                        <p><?php echo $servicesUserPoints .' / ' . $servicesMaxPoints ?></p>
+                      </a>
+                    </div>
+                  </div>
 		</main><!-- #main -->
 	</section><!-- #primary -->
-
-<?php
-get_footer();
+      </div><!-- .container -->
+    </div><!-- #content -->
+  </div><!-- #page -->
+</body>
+</html>

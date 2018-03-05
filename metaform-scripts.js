@@ -160,8 +160,8 @@
       var datasAverages = [];
 
       $.each(labels, function (index, label) {
-        datasUserAverages.push((parseFloat(values.userAverages[label]) || 0) + 2);
-        datasAverages.push((parseFloat(values.averages[label]) || 0) + 2);
+        datasUserAverages.push(parseFloat(values.userAverages[label]) || 0);
+        datasAverages.push(parseFloat(values.averages[label]) || 0);
       });
 
       var chart = new Chart(ctx, {

@@ -58,8 +58,41 @@
     return $averages;
   }
 
+  add_filter( 'query_vars', function ( $vars ){
+    $vars[] = "form_category";
+    $vars[] = "query_name";
+    return $vars;
+  });
+  
   add_action( 'wp_enqueue_scripts', function () {
 
+    add_shortcode('metaform_list', function ($tagAttrs) {
+      $category = get_query_var('form_category', 'ominaisuudet');
+
+      $metaformsByCategory = get_posts( ["post_type" => "metaform", "category_name" => $category] );
+      ?>
+      <div class="card">
+        <ul class="list-group list-group-flush">
+            <?php
+            foreach ($metaformsByCategory as $metaform) {
+              $metaformId = $metaform->ID;
+              $answered = !empty(get_user_meta(wp_get_current_user()->ID, "metaform-$metaformId-values", true));
+              ?>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <?php echo $metaform->post_title ?>
+                <div class="btn-container">
+                  <a class="btn btn-primary" href="<?php the_permalink($metaform)?>">Vastaa</a>
+                  <a class="btn btn-info <?php if (!$answered) { echo 'disabled'; } ?>"  href="<?php echo "/results?query_name=" . $metaform->post_name ?>">Tarkastele vastauksia</a>
+                </div>
+              </li>
+              <?php
+            }
+            ?>
+        </ul>
+      </div>
+    <?php
+    });
+    
     add_shortcode('metaform_averages', function ($tagAttrs) {
       wp_enqueue_script('chartjs', '//cdn.metatavu.io/libs/chart-js/2.5.0/Chart.min.js');
 
@@ -114,25 +147,29 @@
         }
       }
       
-      $attrs = shortcode_atts([
-        'id' => 0
-      ], $tagAttrs);
+      $metaformName = $category = get_query_var('query_name');
+      if (!empty($metaformName)) {
 
-      $id = $attrs['id'];
-      $averageArrays = [];
+        $metaforms = get_posts([
+          'name' => $metaformName,
+          'post_type' => 'metaform',
+          'numberposts' => 1
+        ]);
+        $id = $metaforms[0]->ID;
 
-      $values = getMetaformValues($id);
-      
-      $userValues = json_decode(get_user_meta(wp_get_current_user()->ID, "metaform-$id-values", true), true);
-      
-      $averages = getMetaformCategoryAverageValues($categoryMap, $values);
-      $userAverages = getMetaformCategoryAverageValues($categoryMap, [$userValues]);
+        $values = getMetaformValues($id);
 
-      echo sprintf('<canvas id="metaform-averages" width="400" height="400" data-values="%s"/>', htmlspecialchars(json_encode([
-        userAverages => $userAverages,
-        averages => $averages,
-        categories => $categories
-      ])));
+        $userValues = json_decode(get_user_meta(wp_get_current_user()->ID, "metaform-$id-values", true), true);
+
+        $averages = getMetaformCategoryAverageValues($categoryMap, $values);
+        $userAverages = getMetaformCategoryAverageValues($categoryMap, [$userValues]);
+
+        echo sprintf('<canvas id="metaform-averages" width="400" height="400" data-values="%s"/>', htmlspecialchars(json_encode([
+          userAverages => $userAverages,
+          averages => $averages,
+          categories => $categories
+        ])));
+      }
     });
   } , 99);
   

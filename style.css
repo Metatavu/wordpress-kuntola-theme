@@ -239,7 +239,7 @@ footer#footer-banner {
         font-size: 25px; } }
   footer#footer-banner .footer-text-container .btn-primary {
     border: 2px solid #fff;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     color: #fff;
     padding: 23px;
     border-radius: 0;
@@ -270,8 +270,27 @@ footer#colophon {
 
 .metaform {
   min-height: 570px; }
-  .metaform section {
-    position: absolute; }
+  .metaform .service-usage-desired .ui-slider-horizontal {
+    background: #aaebff; }
+  .metaform .ui-widget.ui-widget-content {
+    border: 1px solid #0f74a2;
+    padding: 10px;
+    border-radius: 10px; }
+  .metaform .ui-slider .ui-slider-handle {
+    background: #0f74a2;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    top: -10px; }
+    .metaform .ui-slider .ui-slider-handle .slider-handle-text {
+      color: #0f74a2;
+      width: 40px;
+      text-align: center;
+      margin-top: -30px;
+      display: block;
+      font-weight: bold;
+      font-size: 20px; }
   .metaform h2 {
     margin-top: 0;
     text-align: center;

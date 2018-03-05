@@ -6,12 +6,18 @@
         {
           "name": "uni-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "uni-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -21,12 +27,18 @@
         {
           "name": "kestavyyskunto-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "kestavyyskunto-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -36,12 +48,18 @@
         {
           "name": "terveellinen-ruokavalio-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "terveellinen-ruokavalio-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -51,12 +69,18 @@
         {
           "name": "tuki-ja-liikuntaelinvaivat-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "tuki-ja-liikuntaelinvaivat-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -66,12 +90,18 @@
         {
           "name": "henkinen-jaksaminen-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "henkinen-jaksaminen-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -81,12 +111,18 @@
         {
           "name": "lihaskunto-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "lihaskunto-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -96,12 +132,18 @@
         {
           "name": "painonhallinta-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "painonhallinta-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -111,12 +153,18 @@
         {
           "name": "liikuntataitojen-lisaaminen-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "liikuntataitojen-lisaaminen-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -126,12 +174,18 @@
         {
           "name": "liikuntamotivaation-lisaaminen-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "liikuntamotivaation-lisaaminen-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -141,12 +195,18 @@
         {
           "name": "istuminen-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "istuminen-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -156,12 +216,18 @@
         {
           "name": "ajanhallinta-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "ajanhallinta-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -171,12 +237,18 @@
         {
           "name": "elamantapamuutoksen-tekeminen-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "elamantapamuutoksen-tekeminen-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     },
@@ -186,12 +258,18 @@
         {
           "name": "muu-mika-vastaa-alle-omin-sanoin-panostan-nykyaan",
           "type": "number",
-          "title": "Panostan nykyään"
+          "title": "Panostan nykyään",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-current"
         },
         {
           "name": "muu-mika-vastaa-alle-omin-sanoin-haluaisin-panostaa",
           "type": "number",
-          "title": "Haluaisin panostaa"
+          "title": "Haluaisin panostaa",
+          "min": 0,
+          "max": 100,
+          "class": "service-usage-desired"
         }
       ]
     }

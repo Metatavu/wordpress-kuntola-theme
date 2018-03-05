@@ -135,7 +135,28 @@
         }
       });
     });
-    
+
+    metaform.find('input[type="number"]').each(function (index, input) {
+      $(input).hide();
+      var handleText = null;
+
+      $('<div>')
+        .appendTo($(input).parent())
+        .slider({
+          min: parseInt($(input).attr('min')) || 0,
+          max: parseInt($(input).attr('max')) || 100,
+          create: function() {
+            handleText = $('<span>')
+              .addClass('slider-handle-text')
+              .appendTo($(this).find('.ui-slider-handle'))
+              .text($( this ).slider("value"));
+          },
+          slide: function(event, ui) {
+            $(input).attr('value', ui.value);
+            handleText.text(ui.value);
+          }
+        });
+    });
   });
 
   $(document).on('click', '.metaform-next', function (event) {

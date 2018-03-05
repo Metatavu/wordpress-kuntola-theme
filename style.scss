@@ -39,6 +39,11 @@ $query-radio-input-checked-border-color: #fff;
 $query-page-title-color: #2d85ad;
 $query-radio-text-color: #000;
 $query-navigation-text-color: #0e75a2;
+$metaform-slider-handle-background: #0f74a2;
+$metaform-slider-handle-size: 40px;
+$metaform-slider-handle-label-text-color: #0f74a2;
+$metaform-desired-slider-background: #aaebff;
+$metaform-slider-border: 1px solid #0f74a2;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
 
@@ -385,9 +390,39 @@ footer#colophon {
   min-height: 570px;
 
   section {
-    position: absolute;
+    // position: absolute;
   }
 
+  .service-usage-desired .ui-slider-horizontal {
+    background: $metaform-desired-slider-background;
+  }
+
+  .ui-widget.ui-widget-content {
+    border: $metaform-slider-border;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .ui-slider .ui-slider-handle {
+    background: $metaform-slider-handle-background;
+    width: $metaform-slider-handle-size;
+    height: $metaform-slider-handle-size;
+    border-radius: $metaform-slider-handle-size / 2;
+    border: 0;
+    top: -$metaform-slider-handle-size / 4;
+
+    .slider-handle-text {
+      color: $metaform-slider-handle-label-text-color;
+      width: $metaform-slider-handle-size;
+      text-align: center;
+      margin-top: -30px;
+      display: block;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+
+  
   h2 {
     margin-top: 0;
     text-align: center;

@@ -13,6 +13,16 @@
     return false;
   });
 
+  add_filter( 'wp_nav_menu_items', function ($items, $args) {
+    if (is_user_logged_in() && $args->theme_location == 'primary') {
+      $items .= '<li class="nav-item"><a class="btn btn-primary" href="'. wp_logout_url() .'">Kirjaudu ulos</a></li>';
+    } elseif (!is_user_logged_in() && $args->theme_location == 'primary') {
+      $items .= '<li class="nav-item"><a class="btn btn-primary" href="'. site_url('wp-login.php') .'">Kirjaudu sisään</a></li>';
+    }
+
+    return $items;
+  }, 10, 2);
+
   add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css' );
     wp_dequeue_style('wp-bootstrap-starter-style');

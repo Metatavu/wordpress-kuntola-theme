@@ -23,7 +23,7 @@ $calltoaction-link-color: #000;
 $calltoaction-button-text-color: #fff;
 $calltoaction-button-background-color: #0f74a2;
 $profile-text-color: #fff;
-$profile-button-background-color: #0e75a2;
+$profile-button-background-color: transparent;
 $profile-button-text-color: #fff;
 $footer-background: #fff;
 $footer-banner-text-color: #fff;
@@ -50,63 +50,131 @@ header#masthead {
   background-color: $header-background-color;
 }
 
+.navbar-brand {
+  @media (max-width: 991.98px) { 
+    max-width: 150px;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  color: $header-text-color !important;
+  outline: none;
+  font-size: 30px;
+}
+
+
 #page-sub-header {
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-top: 0;
+
+  @media (max-width: 991.98px) { 
+    padding-top: 25px;
+  }
 }
 
 body #masthead .navbar-nav > li.nav-item > a {
   text-transform: uppercase;
   color: $header-text-color;
   font-size: 14px;
-  padding-top: 41px;
-  padding-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-weight: bold;
   padding-right: 45px;
+  
+  @media (min-width: 992px) {
+    padding-top: 41px;
+    padding-bottom: 25px;
+  }
+  
 }
 
 body #masthead .navbar-nav > li.nav-item > a[href="/wp-login.php"] {
-  border: $header-register-button-border;
-  padding: 21px 26px;
-  margin-top: 19px;
-  margin-left: 22px;
+  @media (min-width: 992px) {
+    border: $header-register-button-border;
+    margin-left: 22px;
+    padding: 21px 26px;
+    margin-top: 19px;
+  }
 }
 
 body #page-sub-header .container h1 {
   background: $subheader-background-color;
   color: $subheader-text-color;
-  font-size: 48px;
-  padding: 13px 25px;
+  font-size: 24px;
+  padding: 1px 10px;
   text-align: left;
   margin: 1px;
   float: left;
-  line-height: 48px;
+  line-height: 37px;
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
+
+  @media (min-width: 576px) {
+    letter-spacing: 1px;
+    font-size: 36px;
+    padding: 1px 25px;
+    line-height: 48px;
+  }
+  
+  @media (min-width: 992px) {
+    letter-spacing: 3px;
+    font-size: 48px;
+    padding: 13px 25px;
+  }
 }
 
 body #page-sub-header .text-container {
-  margin-top: 200px;
+  @media (min-width: 992px) {
+    margin-top: 200px;
+  }
 }
 
 body #page-sub-header .image-container {
   padding-top: 10px;
-  padding-left: 80px; 
+  padding-left: 80px;
+  
+  @media (max-width: 991.98px) { 
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+  }
 }
 
 .calltoaction-container {
-  padding-top: 70px;
+  padding-top: 30px;
+  
+  @media (min-width: 576px) {
+    padding-top: 70px;
+  }
 }
 
 .calltoaction-container h2 {
-  font-size: 34px;
+  font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
+  text-align: center;
+
+  @media (min-width: 576px) {
+    font-size: 34px;
+  }
+  
+  @media (min-width: 992px) {
+    text-align: left;
+  }
 }
 
 .calltoaction-container p {
   font-size: 16px;
   font-weight: bold;
+  text-align: center;
+
+  @media (min-width: 992px) {
+    text-align: left;
+  }
 }
 
 .calltoaction-container a {
@@ -114,33 +182,58 @@ body #page-sub-header .image-container {
   text-decoration: underline;
 }
 
+.calltoaction-container .login-btn-container {
+  @media (max-width: 991.98px) { 
+    text-align: center;
+    padding-bottom: 60px;
+  }
+}
+
 .calltoaction-container .btn-primary {
   color: $calltoaction-button-text-color;
-  padding: 35px 40px;
+  padding: 15px 25px;
   text-transform: uppercase;
-  font-size: 27px;
+  font-size: 24px;
   background-color: $calltoaction-button-background-color;
   border: none;
   border-radius: 0;
   line-height: 25px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  margin-left: 60px;
   text-decoration: none;
+  
+  @media (min-width: 992px) {
+    margin-left: 60px;
+    font-size: 27px;
+    padding: 35px 40px;
+  }
+  
 }
 
 .profile-container {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
+  @media (max-width: 991.98px) { 
+    text-align: center;
+  }
 
   * {
     color: $profile-text-color;
   }
 
   h2 {
-    font-size: 34px;
+    font-size: 24px;
     text-transform: uppercase;
-    padding-top: 95px;
-    padding-bottom: 90px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    @media (min-width: 992px) {
+      font-size: 34px;
+      padding-top: 95px;
+      padding-bottom: 90px;
+    }
   }
 
   ul {
@@ -150,14 +243,21 @@ body #page-sub-header .image-container {
   .btn-primary {
     background-color: $profile-button-background-color;
     color: $profile-button-text-color;
-    padding: 28px;
-    border: none;
+    padding: 18px 28px;
+    border: 2px solid $profile-button-text-color;
     border-radius: 0;
     font-size: 18px;
     line-height: 18px;
     text-transform: uppercase;
     font-weight: bold;
-    margin-top: 100px;
+    margin-top: 35px;
+    margin-bottom: 55px;
+    
+    @media (min-width: 992px) {
+      margin-top: 100px;
+      margin-bottom: 0px;
+    }
+    
   }
 }
 
@@ -178,11 +278,30 @@ body #page-sub-header .image-container {
 }
 
 footer#footer-banner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: 991.98px) { 
+    text-align: center;
+  }
 
   .footer-image-container {
-    margin-top: 135px;
-    margin-bottom: 145px;
+    margin-top: 55px;
+    margin-bottom: 30px;
     text-align: right;
+    max-width: 300px;
+
+    @media (max-width: 991.98px) { 
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    @media (min-width: 992px) {
+      margin-top: 135px;
+      margin-bottom: 145px;
+      max-width: 100%;
+    }
   }
 
   .footer-text-container {
@@ -191,16 +310,26 @@ footer#footer-banner {
     }
 
     h2 {
-      font-size: 38px;
+      font-size: 24px;
       text-transform: uppercase;
       font-weight: bold;
-      margin-top: 180px;
-      margin-bottom: 40px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      @media (min-width: 992px) {
+        margin-top: 180px;
+        margin-bottom: 40px;
+        font-size: 38px;
+      }
     }
 
     p {
-      font-size: 25px;
+      font-size: 18px;
       font-weight: bold;
+      
+      @media (min-width: 992px) {
+        font-size: 25px;
+      }
     }
 
     .btn-primary {
@@ -213,6 +342,10 @@ footer#footer-banner {
       text-transform: uppercase;
       font-weight: bold;
       margin-top: 30px;
+      
+      @media (max-width: 991.98px) { 
+        margin-bottom: 35px;
+      }
     }
 
   }

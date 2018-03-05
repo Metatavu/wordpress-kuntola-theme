@@ -352,10 +352,25 @@ footer#footer-banner {
 
 }
 
+#content.site-content {
+  padding-top: 15px;
+  
+  @media (min-width: 992px) {
+    padding-top: 4.125rem;
+  }
+}
+
+
 footer#colophon {
   background: $footer-background !important;
-  margin-top: 63px;
   margin-bottom: 34px;
+  margin-top: 0;
+  
+  @media (min-width: 992px) {
+    margin-top: 63px;
+  }
+
+  
 }
 
 .metaform-container {
@@ -382,7 +397,11 @@ footer#colophon {
 
 .metaform { 
 
-  min-height: 570px;
+  min-height: 380px;
+  
+  @media (min-width: 992px) {
+    min-height: 570px;
+  }
 
   section {
     position: absolute;
@@ -396,11 +415,16 @@ footer#colophon {
 
   .form-group label {
     color: $query-page-title-color;
-    font-size: 28px;
+    font-size: 22px;
     text-align: center;
     display: block;
     font-weight: bold;
-    margin-bottom: 80px;
+    margin-bottom: 15px;
+
+    @media (min-width: 992px) {
+      margin-bottom: 80px;
+      font-size: 28px;
+    }
   }
 
   fieldset {
@@ -411,11 +435,15 @@ footer#colophon {
     border: $query-radio-field-border;
     display: inline-block;
     width: 20%;
-    height: 200px;
+    height: 125px;
     padding: 15px;
     text-align: center;
     vertical-align: top;
     position: relative;
+    
+    @media (min-width: 992px) {
+      height: 200px;
+    }
 
     input {
       opacity: 0;
@@ -431,38 +459,57 @@ footer#colophon {
     }
 
     label span {
-      font-size: 16px;
-      text-transform: uppercase;
+      font-size: 10px;
       font-weight: bold;
-      min-height: 80px;
+      min-height: 60px;
       display: block;
-      margin-top: 40px;
-      margin-left: 40px;
-      margin-right: 40px;
+      margin-top: 15px;
       color: $query-radio-text-color;
+
+      @media (min-width: 992px) {
+        padding-left: 15px;
+        padding-right: 15px;
+        min-height: 80px;
+        font-size: 16px;
+        margin-top: 40px;
+        text-transform: uppercase;
+      }
     }
 
     label::after {
       border: $query-radio-input-border;
       content: '';
-      width: $query-radio-input-size;
-      height: $query-radio-input-size;
-      border-radius: $query-radio-input-size / 2;
+      width: $query-radio-input-size - 10;
+      height: $query-radio-input-size - 10;
+      border-radius: ($query-radio-input-size - 10) / 2;
       display: block;
       margin-left: auto;
       margin-right: auto;
+
+      @media (min-width: 992px) {
+        width: $query-radio-input-size;
+        height: $query-radio-input-size;
+        border-radius: $query-radio-input-size / 2;
+      }
+      
     }
 
     input:active + label::after,
     input:checked + label::after {
-      width: $query-radio-input-size + $query-radio-input-checked-border-width;
-      height: $query-radio-input-size + $query-radio-input-checked-border-width;
-      border-radius: ($query-radio-input-size + $query-radio-input-checked-border-width) / 2;
+      width: $query-radio-input-size - 10 + $query-radio-input-checked-border-width;
+      height: $query-radio-input-size - 10 + $query-radio-input-checked-border-width;
+      border-radius: ($query-radio-input-size - 10 + $query-radio-input-checked-border-width) / 2;
       background: $query-radio-input-checked-background;
       border-width: $query-radio-input-checked-border-width;
       border-style: double;
       border-color: $query-radio-input-checked-border-color;
       margin-top: -$query-radio-input-checked-border-width / 2;
+      
+      @media (min-width: 992px) {
+        width: $query-radio-input-size + $query-radio-input-checked-border-width;
+        height: $query-radio-input-size + $query-radio-input-checked-border-width;
+        border-radius: ($query-radio-input-size + $query-radio-input-checked-border-width) / 2;
+      }
     }
 
   }

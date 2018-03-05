@@ -62,7 +62,7 @@ const sections = questions.map((question, pageIndex) => {
       "title": question,
       "options": options.map((option, index) => {
         return {
-          name: index - 2,
+          name: index + 1,
           text: option
         };
       })

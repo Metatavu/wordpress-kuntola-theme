@@ -1,0 +1,199 @@
+{
+  "sections": [
+    {
+      "title": "Uni",
+      "fields": [
+        {
+          "name": "uni-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "uni-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Kestävyyskunto",
+      "fields": [
+        {
+          "name": "kestavyyskunto-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "kestavyyskunto-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Terveellinen ruokavalio",
+      "fields": [
+        {
+          "name": "terveellinen-ruokavalio-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "terveellinen-ruokavalio-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Tuki- ja liikuntaelinvaivat",
+      "fields": [
+        {
+          "name": "tuki-ja-liikuntaelinvaivat-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "tuki-ja-liikuntaelinvaivat-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Henkinen jaksaminen",
+      "fields": [
+        {
+          "name": "henkinen-jaksaminen-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "henkinen-jaksaminen-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Lihaskunto",
+      "fields": [
+        {
+          "name": "lihaskunto-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "lihaskunto-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Painonhallinta",
+      "fields": [
+        {
+          "name": "painonhallinta-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "painonhallinta-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Liikuntataitojen lisääminen",
+      "fields": [
+        {
+          "name": "liikuntataitojen-lisaaminen-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "liikuntataitojen-lisaaminen-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Liikuntamotivaation lisääminen",
+      "fields": [
+        {
+          "name": "liikuntamotivaation-lisaaminen-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "liikuntamotivaation-lisaaminen-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Istuminen",
+      "fields": [
+        {
+          "name": "istuminen-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "istuminen-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Ajanhallinta",
+      "fields": [
+        {
+          "name": "ajanhallinta-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "ajanhallinta-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Elämäntapamuutoksen tekeminen",
+      "fields": [
+        {
+          "name": "elamantapamuutoksen-tekeminen-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "elamantapamuutoksen-tekeminen-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    },
+    {
+      "title": "Muu, mikä (vastaa alle omin sanoin)",
+      "fields": [
+        {
+          "name": "muu-mika-vastaa-alle-omin-sanoin-panostan-nykyaan",
+          "type": "number",
+          "title": "Panostan nykyään"
+        },
+        {
+          "name": "muu-mika-vastaa-alle-omin-sanoin-haluaisin-panostaa",
+          "type": "number",
+          "title": "Haluaisin panostaa"
+        }
+      ]
+    }
+  ]
+}

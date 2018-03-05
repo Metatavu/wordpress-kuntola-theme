@@ -1,14 +1,6 @@
 {
   "sections": [
     {
-      "fields": [
-        {
-          "type": "html",
-          "html": "<div class=\"row\"><div class=\"col text-center\"><div class=\"metaform-pages-container\"><span class=\"metaform-page\">1</span><span>/</span><span class=\"metaform-pages\">40</span></div></div></div>"
-        }
-      ]
-    },
-    {
       "title": "Miksi harrastat liikuntaa?",
       "visible-if": {
         "field": "page",
@@ -21,23 +13,23 @@
           "title": "Ansaitakseni elantoni",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -57,23 +49,23 @@
           "title": "Koska se auttaaminua rentoutumaan",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -93,23 +85,23 @@
           "title": "Koska se on mielenkiintoista",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -129,23 +121,23 @@
           "title": "Jotta voisin liikkua yhdessä muiden kanssa",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -165,23 +157,23 @@
           "title": "Kehittyäkseni",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -201,23 +193,23 @@
           "title": "Ollakseni paremmassa kunnossa kuin muut",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -237,23 +229,23 @@
           "title": "Koska minulle maksetaan siitä",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -273,23 +265,23 @@
           "title": "Koska nautin ajanvietosta muiden seurassa liikkuen",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -309,23 +301,23 @@
           "title": "Koska haluan hallita stressiä paremmin",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -345,23 +337,23 @@
           "title": "Koska sen avulla keho pysyy terveenä",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -381,23 +373,23 @@
           "title": "Koska se saa lihakset näyttämään paremmilta",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -417,23 +409,23 @@
           "title": "Ollakseni fyysisesti hyvässä kunnossa",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -453,23 +445,23 @@
           "title": "Koska se tekee minut onnelliseksi",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -489,23 +481,23 @@
           "title": "Unohtaakseni työ/arkihuolet",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -525,23 +517,23 @@
           "title": "Ylläpitääkseni fyysistä terveyttäni",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -561,23 +553,23 @@
           "title": "Parantaakseni nykyisiä taitojani",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -597,23 +589,23 @@
           "title": "Ollakseni ryhmän paras",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -633,23 +625,23 @@
           "title": "Hoitaakseni sairautta tai vaivaa",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -669,23 +661,23 @@
           "title": "parantaakseni suorituskykyäni verrattuna aikaisempiin suorituksiini",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -705,23 +697,23 @@
           "title": "Koska se on yhteistä minulle ja ystävilleni",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -741,23 +733,23 @@
           "title": "koska muiden mielestä tarvitsen liikuntaa",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -777,23 +769,23 @@
           "title": "koska se toimii stressin laukaisijana",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -813,23 +805,23 @@
           "title": "parantaakseni kehoni muotoa",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -849,23 +841,23 @@
           "title": "oppiakseni uusia taitoja tai kokeillakseni uusia liikuntamuotoja",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -885,23 +877,23 @@
           "title": "Koska se on hauskaa",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -921,23 +913,23 @@
           "title": "Lääkärin/fysioterapeutin tms. määräyksestä",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -957,23 +949,23 @@
           "title": "Tehdäkseni kuntoni eteen enemmän kuin muut ihmiset",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -993,23 +985,23 @@
           "title": "Koska se pitää minut terveenä",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1029,23 +1021,23 @@
           "title": "Kilpaillakseni muiden kanssa",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1065,23 +1057,23 @@
           "title": "koska voin samalla keskustella ystävieni kanssa",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1101,23 +1093,23 @@
           "title": "Pitääkseni yllä nykyistä taitotasoani",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1137,23 +1129,23 @@
           "title": "parantaakseni ulkonäköäni",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1173,23 +1165,23 @@
           "title": "Parantaakseni kestävyyskuntoani",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1209,23 +1201,23 @@
           "title": "koska nautin liikkumisesta",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1245,23 +1237,23 @@
           "title": "koska liikunta saa ajatukset muualle",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1281,23 +1273,23 @@
           "title": "Pudottaakseni painoa, jotta näyttäisin paremmalta",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1317,23 +1309,23 @@
           "title": "koska koen sen hauskana",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1353,23 +1345,23 @@
           "title": "Ollakseni ystävieni kanssa",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1389,23 +1381,23 @@
           "title": "Ollakseni paremmassa kunnossa kuin muut",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1425,23 +1417,23 @@
           "title": "koska se auttaa minua ylläpitämään kehoni jäntevänä",
           "options": [
             {
-              "name": -2,
+              "name": 1,
               "text": "Täysin eri mieltä"
             },
             {
-              "name": -1,
+              "name": 2,
               "text": "Jokseenkin eri mieltä"
             },
             {
-              "name": 0,
+              "name": 3,
               "text": "En osaa sanoa"
             },
             {
-              "name": 1,
+              "name": 4,
               "text": "Jokseenkin samaa mieltä"
             },
             {
-              "name": 2,
+              "name": 5,
               "text": "Täysin samaa mieltä"
             }
           ]
@@ -1452,7 +1444,7 @@
       "fields": [
         {
           "type": "html",
-          "html": "<div class=\"row\"><div class=\"col text-right\"><a class=\"metaform-prev\" href=\"#\"><i class=\"fa fa-arrow-left\" aria-hidden=\"true\"></i><span>Edellinen</span></a></div><div class=\"col text-left\"><a class=\"metaform-next\" href=\"#\"><span>Seuraava</span><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i></a></div></div><input type=\"hidden\" name=\"page-count\" value=\"40\"/>"
+          "html": "<input type=\"hidden\" name=\"page-count\" value=\"40\"/>"
         },
         {
           "type": "hidden",

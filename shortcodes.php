@@ -61,6 +61,7 @@
   add_filter( 'query_vars', function ( $vars ){
     $vars[] = "form_category";
     $vars[] = "query_name";
+    $vars[] = "query_id";
     return $vars;
   });
   
@@ -147,15 +148,24 @@
         }
       }
       
+      $metaform = null;
       $metaformName = get_query_var('query_name');
-      if (!empty($metaformName)) {
-
+      
+      if (empty($metaformName)) {
+        $metaformId = get_query_var('query_id');
+        $metaform = get_post($metaformId);
+      } else {
         $metaforms = get_posts([
           'name' => $metaformName,
           'post_type' => 'metaform',
           'numberposts' => 1
         ]);
-        $id = $metaforms[0]->ID;
+        
+        $metaform = $metaforms[0];
+      }
+      
+      if (!empty($metaform)) {
+        $id = $metaform->ID;
 
         $values = getMetaformValues($id);
 
@@ -163,7 +173,7 @@
 
         $averages = getMetaformCategoryAverageValues($categoryMap, $values);
         $userAverages = getMetaformCategoryAverageValues($categoryMap, [$userValues]);
-        
+
         $highestCategoryName = '';
         $highestCategoryValue = 0;
         foreach ($userAverages as $categoryName => $categoryValue) {

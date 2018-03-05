@@ -21,6 +21,7 @@
   }
 
   function changeMetaformPage(metaform, delta) {
+    var id = $(metaform).closest('.metaform-container').attr('data-id');
     $(metaform).metaform('option', 'animation.hide.options.direction', delta > 0 ? 'left' : 'right');
     $(metaform).metaform('option', 'animation.show.options.direction', delta > 0 ? 'right' : 'left');
     setMetaformPage(metaform, getMetaformPage(metaform) + delta, function () {
@@ -32,7 +33,7 @@
             if (err) {
               alert(err);
             } else {
-              window.location = '/profile';
+              window.location = '/results?query_id=' + id;
             }
           });    
         }

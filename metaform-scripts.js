@@ -150,6 +150,7 @@
       $('<div>')
         .appendTo($(input).parent())
         .slider({
+          value: $(input).val() || 0,
           min: parseInt($(input).attr('min')) || 0,
           max: parseInt($(input).attr('max')) || 100,
           create: function() {
@@ -161,6 +162,13 @@
           slide: function(event, ui) {
             $(input).attr('value', ui.value);
             handleText.text(ui.value);
+          },
+          change: function( event, ui ) {
+            saveMetaform(metaform, function (err) {
+              if (err) {
+                alert(err);
+              }
+            });
           }
         });
     });

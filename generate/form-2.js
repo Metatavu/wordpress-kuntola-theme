@@ -22,11 +22,14 @@ const options = [
 const sections = questions.map((question, pageIndex) => {
   return {
     "title": question,
-    "fields": options.map((option) => {
+    "fields": options.map((option, optionIndex) => {
       return {
         "name": getSlug(question + " " + option, {lang: 'fi'}),
         "type": "number",
-        "title": option
+        "title": option,
+        "min": 0,
+        "max": 100,
+        "class": optionIndex === 0 ? 'service-usage-current' : 'service-usage-desired'
       };
     })
   };

@@ -117,8 +117,8 @@ get_header(); ?>
                     echo ('<a href="/queries?form_category=ominaisuudet"><h1> Ominaisuudet: '. $propertiesUserPoints .' / ' . $propertiesMaxPoints . '</h1></a>');
                     echo ('<a href="/queries?form_category=käyttäytyminen"><h1> Käyttäytyminen: '. $behaviourUserPoints .' / ' . $behaviourMaxPoints . '</h1></a>');
                     echo ('<a href="/queries?form_category=terveys"><h1> Terveys: '. $healthUserPoints .' / ' . $healthMaxPoints . '</h1></a>');
-                    echo ('<a href="/queries?result_category=palvelut"><h1> Palveluni: '. $servicesUserPoints .' / ' . $healthMaxPoints . '</h1></a>');
-                    echo ('<a href="/queries?result_category=minä"><h1> Minä: '. $motivationUserPoints .' / ' . $motivationMaxPoints . '</h1></a>');
+                    echo ('<a href="/queries?form_category=palvelut"><h1> Palveluni: '. $servicesUserPoints .' / ' . $healthMaxPoints . '</h1></a>');
+                    echo ('<a href="/queries?form_category=minä"><h1> Minä: '. $motivationUserPoints .' / ' . $motivationMaxPoints . '</h1></a>');
                   ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->

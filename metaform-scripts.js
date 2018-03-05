@@ -80,9 +80,7 @@
     });
   }
 
-  $(document).on('metaformcreate', function (event, ui) {
-    var metaform = $(event.target);
-
+  function createPagedMetaform(metaform) {
     var pageCount = getMetaformPageCount(metaform);
     var pages = $('<div class="row"><div class="col text-center"><div class="metaform-pages-container"><span class="metaform-page">1</span><span>/</span><span class="metaform-pages">' + pageCount + '</span></div></div></div>');
     var navigation = $('<div class="row"><div class="col text-right"><a class="metaform-prev" href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i><span>Edellinen</span></a></div><div class="col text-left"><a class="metaform-next" href="#"><span>Seuraava</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a></div></div><input type="hidden" name="page-count" value="' + pageCount + '"/>');
@@ -99,7 +97,7 @@
         setMetaformPage(metaform, value);
       }
     }
-
+    
     $(metaform).metaform('option', 'animation', {
       framework: 'jquery-ui',
       hide: {
@@ -136,6 +134,14 @@
         }
       });
     });
+  }
+
+  $(document).on('metaformcreate', function (event, ui) {
+    var metaform = $(event.target);
+
+    if (metaform.closest('.metaform-paged').length) {
+      createPagedMetaform(metaform);
+    }
 
     metaform.find('input[type="number"]').each(function (index, input) {
       $(input).hide();

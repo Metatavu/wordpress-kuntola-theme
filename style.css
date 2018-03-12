@@ -17,6 +17,12 @@ Kuntola is based on WP Bootstrap Starter theme.
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900");
 body {
   font-family: 'Montserrat', sans-serif; }
+  body .ui-widget-overlay {
+    background: #000;
+    opacity: 0.75;
+    position: fixed; }
+  body .ui-dialog {
+    max-width: 95% !important; }
 
 header#masthead {
   background-color: #000; }
@@ -257,7 +263,7 @@ footer#footer-banner {
         font-size: 25px; } }
   footer#footer-banner .footer-text-container .btn-primary {
     border: 2px solid #fff;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: #fff;
     padding: 23px;
     border-radius: 0;

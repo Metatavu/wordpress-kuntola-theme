@@ -55,6 +55,16 @@ $profile-page-text-color: #fff;
 
 body {
   font-family: 'Montserrat', sans-serif;
+  
+  .ui-widget-overlay {
+    background: #000;
+    opacity: 0.75;
+    position: fixed;
+  }
+  
+  .ui-dialog {
+    max-width: 95% !important;
+  }
 }
 
 header#masthead {

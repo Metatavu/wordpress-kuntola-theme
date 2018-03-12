@@ -62,16 +62,20 @@
             <div class="container">
               <div class="row">
                 <div class="col-lg text-container">
+                  <?php if (!empty(get_theme_mod( 'header_banner_title_setting' ))) { ?>
                   <div class="row">
                     <div class="col">
                       <h1><?php echo get_theme_mod( 'header_banner_title_setting' );?></h1>
                     </div>
                   </div>
+                  <?php } ?>
+                  <?php if (!empty(get_theme_mod( 'header_banner_tagline_setting' ))) { ?>
                   <div class="row">
                     <div class="col">
                       <h1><?php echo get_theme_mod( 'header_banner_tagline_setting' );?></h1>
                     </div>
                   </div>
+                  <?php } ?>
                 </div>
                 <div class="col-lg image-container">
                   <img src="<?php echo esc_attr(get_theme_mod( 'kuntola_header_image_right' )); ?>"/>
@@ -89,7 +93,7 @@
           <p><?php echo get_theme_mod( 'header_calltoaction_text' );?></p>
         </div>
         <div class="col-lg login-btn-container">
-          <a class="btn btn-primary" href="/wp-login.php">Rekisteröidy</a>
+          <a class="btn btn-primary" href="/profile">Rekisteröidy</a>
         </div>
       </div>
     </div>

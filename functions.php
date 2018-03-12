@@ -17,7 +17,7 @@
     if (is_user_logged_in() && $args->theme_location == 'primary') {
       $items .= '<li class="nav-item"><a class="btn btn-primary" href="'. wp_logout_url() .'">Kirjaudu ulos</a></li>';
     } elseif (!is_user_logged_in() && $args->theme_location == 'primary') {
-      $items .= '<li class="nav-item"><a class="btn btn-primary" href="'. site_url('wp-login.php') .'">Kirjaudu sisään</a></li>';
+      $items .= '<li class="nav-item"><a class="btn btn-primary" href="/profile">Kirjaudu sisään</a></li>';
     }
 
     return $items;

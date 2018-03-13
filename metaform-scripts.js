@@ -143,7 +143,7 @@
       createPagedMetaform(metaform);
     }
 
-    metaform.find('input[type="number"]').each(function (index, input) {
+    metaform.find('.slider input[type="number"]').each(function (index, input) {
       $(input).hide();
       var handleText = null;
 

@@ -52,7 +52,7 @@
     }
 
     foreach ($averageArrays as $key => $averageArray) {
-      $averages[$key] = array_sum($averageArray) / count($averageArray);
+      $averages[$key] = round(array_sum($averageArray) / count($averageArray), 2);
     }
 
     return $averages;

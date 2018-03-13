@@ -101,24 +101,35 @@ add_filter( 'body_class', function( $classes ) {
   return array_merge( $classes, ['profile-page']);
 });
 
+add_action( 'wp_enqueue_scripts', function () {
+  wp_register_style('jquery-ui', '//cdn.metatavu.io/libs/jquery-ui/1.12.1/jquery-ui.min.css');
+  wp_enqueue_style('jquery-ui');
+  wp_enqueue_script('profile-scripts', get_stylesheet_directory_uri() . '/profile-scripts.js', ['jquery-ui-dialog']);
+} , 100);
+
 get_header(); ?>
 
 	<section id="primary" class="content-area col">
-		<main id="main" class="site-main" role="main">
-                  <?php
-                    $propertiesMaxPoints = getMetaformMaxPointsByCategory("ominaisuudet");
-                    $behaviourMaxPoints = getMetaformMaxPointsByCategory("käyttäytyminen");
-                    $healthMaxPoints = getMetaformMaxPointsByCategory("terveys");
-                    $servicesMaxPoints = getMetaformMaxPointsByCategory("palvelut");
-                    $motivationMaxPoints = getMetaformMaxPointsByCategory("minä");
-                    
-                    $propertiesUserPoints = getMetaformUserPointsByCategory("ominaisuudet");
-                    $behaviourUserPoints = getMetaformUserPointsByCategory("käyttäytyminen");
-                    $healthUserPoints = getMetaformUserPointsByCategory("terveys");
-                    $servicesUserPoints = getMetaformUserPointsByCategory("palvelut");
-                    $motivationUserPoints = getMetaformUserPointsByCategory("minä");
-                  ?>
+          
+                <?php
+                  $propertiesMaxPoints = getMetaformMaxPointsByCategory("ominaisuudet");
+                  $behaviourMaxPoints = getMetaformMaxPointsByCategory("käyttäytyminen");
+                  $healthMaxPoints = getMetaformMaxPointsByCategory("terveys");
+                  $servicesMaxPoints = getMetaformMaxPointsByCategory("palvelut");
+                  $motivationMaxPoints = getMetaformMaxPointsByCategory("minä");
+
+                  $propertiesUserPoints = getMetaformUserPointsByCategory("ominaisuudet");
+                  $behaviourUserPoints = getMetaformUserPointsByCategory("käyttäytyminen");
+                  $healthUserPoints = getMetaformUserPointsByCategory("terveys");
+                  $servicesUserPoints = getMetaformUserPointsByCategory("palvelut");
+                  $motivationUserPoints = getMetaformUserPointsByCategory("minä");
                   
+                  if ($motivationUserPoints > 0) {
+                    echo '<main id="main" class="site-main" role="main">';
+                  } else {
+                    echo '<main id="main" class="site-main not-answered" role="main">';
+                  }
+                ?>
                   <div class="row">
                     <div class="col">
                       <a href="/queries?form_category=ominaisuudet">

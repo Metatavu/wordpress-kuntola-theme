@@ -97,6 +97,17 @@ function getMetaformUserPointsByCategory($categoryName) {
   return $result;
 }
 
+function hasMetaformAnswers($slug) {
+  $metaforms = get_posts( ["post_type" => "metaform", "post_slug" => $slug] );
+  $metaform = array_shift($metaforms);
+  if ($metaform) {
+    $metaformId = $metaform->ID;
+    return !!get_user_meta(wp_get_current_user()->ID, "metaform-$metaformId-values", true);
+  }
+
+  return null;
+}
+
 add_filter( 'body_class', function( $classes ) {
   return array_merge( $classes, ['profile-page']);
 });
@@ -106,6 +117,12 @@ add_action( 'wp_enqueue_scripts', function () {
   wp_enqueue_style('jquery-ui');
   wp_enqueue_script('profile-scripts', get_stylesheet_directory_uri() . '/profile-scripts.js', ['jquery-ui-dialog']);
 } , 100);
+
+// If user has not aswered "taustatiedot" -query, we will redirect him/her to the form
+if (!hasMetaformAnswers("taustatiedot")) {
+  wp_redirect("/metaform/taustatiedot/");
+  exit;
+}
 
 get_header(); ?>
 

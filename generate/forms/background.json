@@ -38,6 +38,9 @@
         "type": "submit",
         "text": "Rekisteröidy",
         "name": "register"
+      }, {
+        "type": "html",
+        "html": "<input type=\"hidden\" value=\"/profile\" name=\"save-redirect\"/>"
       }]
     }
   ]

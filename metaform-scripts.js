@@ -174,6 +174,23 @@
     });
   });
 
+  $(document).on('click', 'input[type="submit"]', function (event) {
+    event.preventDefault();
+    var button = $(event.target);
+    var metaform = button.closest('.metaform-container').find('.metaform');
+
+    saveMetaform(metaform, function (err) {
+      if (err) {
+        alert(err);
+      } else {
+        var saveRedirect = metaform.find('input[name="save-redirect"]').val();
+        if (saveRedirect) {
+          window.location.href = saveRedirect;
+        }
+      }
+    });
+  });
+
   $(document).on('click', '.metaform-next', function (event) {
     event.preventDefault();
     var link = $(event.target);

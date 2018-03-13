@@ -7,7 +7,7 @@
  * @package WP_Bootstrap_Starter
  */
 
-get_header('metaform-profiili'); ?>
+get_header('metaform-taustatiedot'); ?>
 
 	<section id="primary" class="content-area col">
 		<main id="main" class="site-main" role="main">         
@@ -39,4 +39,4 @@ get_header('metaform-profiili'); ?>
 
 <?php
 get_sidebar();
-get_footer('metaform-profiili');
+get_footer('metaform-taustatiedot');

@@ -449,18 +449,18 @@ footer#colophon {
     display: block;
     margin-bottom: 10px; }
 
-body.metaform-profiili {
+body.metaform-taustatiedot {
   background: url("gfx/bg-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
   min-height: 100vh; }
-  body.metaform-profiili #content {
+  body.metaform-taustatiedot #content {
     background-image: url("gfx/kuntola.png");
     background-repeat: no-repeat;
     background-position: 80px 25px;
     background-size: 170px; }
-  body.metaform-profiili h2 {
+  body.metaform-taustatiedot h2 {
     text-align: center;
     text-transform: uppercase;
     color: #fff;
@@ -468,15 +468,15 @@ body.metaform-profiili {
     font-size: 36px;
     margin-top: 100px;
     margin-bottom: 70px; }
-  body.metaform-profiili input,
-  body.metaform-profiili input:active,
-  body.metaform-profiili input:focus,
-  body.metaform-profiili .form-control::placeholder,
-  body.metaform-profiili select.form-control {
+  body.metaform-taustatiedot input,
+  body.metaform-taustatiedot input:active,
+  body.metaform-taustatiedot input:focus,
+  body.metaform-taustatiedot .form-control::placeholder,
+  body.metaform-taustatiedot select.form-control {
     color: #000;
     font-weight: bold;
     font-style: normal; }
-  body.metaform-profiili .btn-primary {
+  body.metaform-taustatiedot .btn-primary {
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -487,33 +487,33 @@ body.metaform-profiili {
     border-radius: 0;
     border: 2px solid #fff;
     transition: background-color 150ms linear; }
-  body.metaform-profiili .btn-primary:hover {
+  body.metaform-taustatiedot .btn-primary:hover {
     color: #fff;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.2); }
-  body.metaform-profiili .btn-lg {
+  body.metaform-taustatiedot .btn-lg {
     text-transform: uppercase;
     padding: 15px 20px;
     font-size: 18px; }
-  body.metaform-profiili #fg-height,
-  body.metaform-profiili #fg-weight {
+  body.metaform-taustatiedot #fg-height,
+  body.metaform-taustatiedot #fg-weight {
     width: 50%;
     display: inline-block; }
-  body.metaform-profiili #fg-height {
+  body.metaform-taustatiedot #fg-height {
     margin-right: 15px; }
-  body.metaform-profiili #fg-weight {
+  body.metaform-taustatiedot #fg-weight {
     margin-left: 15px; }
-  body.metaform-profiili select, body.metaform-profiili input {
+  body.metaform-taustatiedot select, body.metaform-taustatiedot input {
     height: 60px !important; }
-  body.metaform-profiili .page-number {
+  body.metaform-taustatiedot .page-number {
     display: inline-block;
     color: rgba(255, 255, 255, 0.4);
     min-width: 160px; }
-  body.metaform-profiili .page-number-header {
+  body.metaform-taustatiedot .page-number-header {
     font-size: 14px;
     padding-bottom: 15px;
     max-width: 155px; }
-  body.metaform-profiili .page-number-container {
+  body.metaform-taustatiedot .page-number-container {
     border-radius: 25px;
     font-size: 28px;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -522,10 +522,10 @@ body.metaform-profiili {
     height: 50px;
     line-height: 50px;
     margin-bottom: 100px; }
-  body.metaform-profiili .active .page-number-container {
+  body.metaform-taustatiedot .active .page-number-container {
     border-color: #fff;
     color: #fff; }
-  body.metaform-profiili .active .page-number-header {
+  body.metaform-taustatiedot .active .page-number-header {
     color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

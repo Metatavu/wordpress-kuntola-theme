@@ -114,9 +114,12 @@
             <?php echo apply_filters( 'the_content', $profilePage->post_content ); ?>
           </div>
 
+          <?php $postThumbnail = get_the_post_thumbnail($profilePage, 'full'); ?>
+          <?php if ($postThumbnail) { ?>
           <div class="col profile-image-container d-none d-lg-block">  
             <?php echo get_the_post_thumbnail($profilePage, 'full');?>
           </div>
+          <?php } ?>
         </div>
       </div>
     </div>

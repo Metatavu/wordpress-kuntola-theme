@@ -503,6 +503,15 @@ body.metaform-taustatiedot {
     margin-right: 15px; }
   body.metaform-taustatiedot .metaform #fg-weight {
     margin-left: 15px; }
+  @media (max-width: 991.98px) {
+    body.metaform-taustatiedot .metaform #fg-height,
+    body.metaform-taustatiedot .metaform #fg-weight {
+      width: calc(50% + 15px);
+      display: inline-block; }
+    body.metaform-taustatiedot .metaform #fg-height {
+      margin-right: 0; }
+    body.metaform-taustatiedot .metaform #fg-weight {
+      margin-left: 0; } }
   body.metaform-taustatiedot .metaform select, body.metaform-taustatiedot .metaform input {
     height: 60px !important; }
   body.metaform-taustatiedot .metaform .page-number {

@@ -29,7 +29,7 @@ const sections = questions.map((question, pageIndex) => {
         "title": option,
         "min": 0,
         "max": 100,
-        "class": optionIndex === 0 ? 'service-usage-current' : 'service-usage-desired'
+        "class": "slider " + (optionIndex === 0 ? 'service-usage-current' : 'service-usage-desired')
       };
     })
   };

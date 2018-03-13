@@ -9,7 +9,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "uni-haluaisin-panostaa",
@@ -17,7 +17,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -30,7 +30,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "kestavyyskunto-haluaisin-panostaa",
@@ -38,7 +38,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -51,7 +51,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "terveellinen-ruokavalio-haluaisin-panostaa",
@@ -59,7 +59,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -72,7 +72,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "tuki-ja-liikuntaelinvaivat-haluaisin-panostaa",
@@ -80,7 +80,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -93,7 +93,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "henkinen-jaksaminen-haluaisin-panostaa",
@@ -101,7 +101,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -114,7 +114,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "lihaskunto-haluaisin-panostaa",
@@ -122,7 +122,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -135,7 +135,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "painonhallinta-haluaisin-panostaa",
@@ -143,7 +143,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -156,7 +156,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "liikuntataitojen-lisaaminen-haluaisin-panostaa",
@@ -164,7 +164,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -177,7 +177,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "liikuntamotivaation-lisaaminen-haluaisin-panostaa",
@@ -185,7 +185,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -198,7 +198,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "istuminen-haluaisin-panostaa",
@@ -206,7 +206,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -219,7 +219,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "ajanhallinta-haluaisin-panostaa",
@@ -227,7 +227,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -240,7 +240,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "elamantapamuutoksen-tekeminen-haluaisin-panostaa",
@@ -248,7 +248,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     },
@@ -261,7 +261,7 @@
           "title": "Panostan nykyään",
           "min": 0,
           "max": 100,
-          "class": "service-usage-current"
+          "class": "slider service-usage-current"
         },
         {
           "name": "muu-mika-vastaa-alle-omin-sanoin-haluaisin-panostaa",
@@ -269,7 +269,7 @@
           "title": "Haluaisin panostaa",
           "min": 0,
           "max": 100,
-          "class": "service-usage-desired"
+          "class": "slider service-usage-desired"
         }
       ]
     }

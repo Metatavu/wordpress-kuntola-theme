@@ -460,6 +460,9 @@ body.metaform-taustatiedot {
     background-repeat: no-repeat;
     background-position: 80px 25px;
     background-size: 170px; }
+  @media (max-width: 991.98px) {
+    body.metaform-taustatiedot #content {
+      background-position: center 25px; } }
   body.metaform-taustatiedot h2 {
     text-align: center;
     text-transform: uppercase;

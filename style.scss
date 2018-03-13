@@ -666,91 +666,93 @@ body.metaform-taustatiedot {
     margin-bottom: 70px;
   }
 
-  input,
-  input:active,
-  input:focus,
-  .form-control::placeholder,
-  select.form-control {
-    color: #000;
-    font-weight: bold;
-    font-style: normal;
-  }
+  .metaform {
+    input,
+    input:active,
+    input:focus,
+    .form-control::placeholder,
+    select.form-control {
+      color: #000;
+      font-weight: bold;
+      font-style: normal;
+    }
 
-  .btn-primary {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    background: transparent;
-    color: #fff;
-    border-radius: 0;
-    border: 2px solid #fff;
-    transition: background-color 150ms linear;
-  
-  }
-  
-  .btn-primary:hover {
-    color: #fff;
-    text-decoration: none;
-    background-color: rgba(255,255,255,0.2);
-  }
-  
-  .btn-lg {
-    text-transform: uppercase;
-    padding: 15px 20px;
-    font-size: 18px;
-  }
-
-  #fg-height,
-  #fg-weight {
-    width: 50%;
-    display: inline-block;
-  }
-
-  #fg-height {
-    margin-right: 15px;
-  }
-
-  #fg-weight {
-    margin-left: 15px;
-  }
-
-  select, input {
-    height: 60px !important;
-  }
-
-  .page-number {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.4);
-    min-width: 160px;
-  }
-
-  .page-number-header {
-    font-size: 14px;
-    padding-bottom: 15px;
-    max-width: 155px;
-  }
-  
-  .page-number-container {
-    border-radius: 25px;
-    font-size: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    margin-bottom: 100px;
-  }
-
-  .active {
-    .page-number-container {
-      border-color: #fff;
+    .btn-primary {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      margin-top: 50px;
+      margin-bottom: 30px;
+      background: transparent;
       color: #fff;
+      border-radius: 0;
+      border: 2px solid #fff;
+      transition: background-color 150ms linear;
+    
+    }
+    
+    .btn-primary:hover {
+      color: #fff;
+      text-decoration: none;
+      background-color: rgba(255,255,255,0.2);
+    }
+    
+    .btn-lg {
+      text-transform: uppercase;
+      padding: 15px 20px;
+      font-size: 18px;
+    }
+
+    #fg-height,
+    #fg-weight {
+      width: 50%;
+      display: inline-block;
+    }
+
+    #fg-height {
+      margin-right: 15px;
+    }
+
+    #fg-weight {
+      margin-left: 15px;
+    }
+
+    select, input {
+      height: 60px !important;
+    }
+
+    .page-number {
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.4);
+      min-width: 160px;
     }
 
     .page-number-header {
-      color: #fff;
+      font-size: 14px;
+      padding-bottom: 15px;
+      max-width: 155px;
+    }
+    
+    .page-number-container {
+      border-radius: 25px;
+      font-size: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      margin-bottom: 100px;
+    }
+
+    .active {
+      .page-number-container {
+        border-color: #fff;
+        color: #fff;
+      }
+
+      .page-number-header {
+        color: #fff;
+      }
     }
   }
 

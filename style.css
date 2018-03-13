@@ -468,15 +468,15 @@ body.metaform-taustatiedot {
     font-size: 36px;
     margin-top: 100px;
     margin-bottom: 70px; }
-  body.metaform-taustatiedot input,
-  body.metaform-taustatiedot input:active,
-  body.metaform-taustatiedot input:focus,
-  body.metaform-taustatiedot .form-control::placeholder,
-  body.metaform-taustatiedot select.form-control {
+  body.metaform-taustatiedot .metaform input,
+  body.metaform-taustatiedot .metaform input:active,
+  body.metaform-taustatiedot .metaform input:focus,
+  body.metaform-taustatiedot .metaform .form-control::placeholder,
+  body.metaform-taustatiedot .metaform select.form-control {
     color: #000;
     font-weight: bold;
     font-style: normal; }
-  body.metaform-taustatiedot .btn-primary {
+  body.metaform-taustatiedot .metaform .btn-primary {
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -487,33 +487,33 @@ body.metaform-taustatiedot {
     border-radius: 0;
     border: 2px solid #fff;
     transition: background-color 150ms linear; }
-  body.metaform-taustatiedot .btn-primary:hover {
+  body.metaform-taustatiedot .metaform .btn-primary:hover {
     color: #fff;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.2); }
-  body.metaform-taustatiedot .btn-lg {
+  body.metaform-taustatiedot .metaform .btn-lg {
     text-transform: uppercase;
     padding: 15px 20px;
     font-size: 18px; }
-  body.metaform-taustatiedot #fg-height,
-  body.metaform-taustatiedot #fg-weight {
+  body.metaform-taustatiedot .metaform #fg-height,
+  body.metaform-taustatiedot .metaform #fg-weight {
     width: 50%;
     display: inline-block; }
-  body.metaform-taustatiedot #fg-height {
+  body.metaform-taustatiedot .metaform #fg-height {
     margin-right: 15px; }
-  body.metaform-taustatiedot #fg-weight {
+  body.metaform-taustatiedot .metaform #fg-weight {
     margin-left: 15px; }
-  body.metaform-taustatiedot select, body.metaform-taustatiedot input {
+  body.metaform-taustatiedot .metaform select, body.metaform-taustatiedot .metaform input {
     height: 60px !important; }
-  body.metaform-taustatiedot .page-number {
+  body.metaform-taustatiedot .metaform .page-number {
     display: inline-block;
     color: rgba(255, 255, 255, 0.4);
     min-width: 160px; }
-  body.metaform-taustatiedot .page-number-header {
+  body.metaform-taustatiedot .metaform .page-number-header {
     font-size: 14px;
     padding-bottom: 15px;
     max-width: 155px; }
-  body.metaform-taustatiedot .page-number-container {
+  body.metaform-taustatiedot .metaform .page-number-container {
     border-radius: 25px;
     font-size: 28px;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -522,10 +522,10 @@ body.metaform-taustatiedot {
     height: 50px;
     line-height: 50px;
     margin-bottom: 100px; }
-  body.metaform-taustatiedot .active .page-number-container {
+  body.metaform-taustatiedot .metaform .active .page-number-container {
     border-color: #fff;
     color: #fff; }
-  body.metaform-taustatiedot .active .page-number-header {
+  body.metaform-taustatiedot .metaform .active .page-number-header {
     color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

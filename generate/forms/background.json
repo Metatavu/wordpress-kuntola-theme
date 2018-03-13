@@ -1,0 +1,44 @@
+{
+  "sections": [
+    {
+      "title": "Taustatiedot",
+      "fields": [{
+        "type": "html",
+        "html": "<div class=\"page-numbers-container\" class=\"col-xs-4\"><div class=\"page-number\"><div class=\"page-number-header\">Rekisteröityminen</div><div class=\"page-number-container\">1</div></div><div class=\"page-number active\"><div class=\"page-number-header\">Taustatiedot</div><div class=\"page-number-container\">2</div></div></div>"
+      }, {
+        "name": "sex",
+        "type": "select",
+        "options": [{
+          "name": "",
+          "text": "Sukupuoli",
+          "selected": true
+        },{
+          "name": "male",
+          "text": "Mies"
+        }, {
+          "name": "female",
+          "text": "Nainen"
+        }, {
+          "name": "other",
+          "text": "Muu"
+        }]
+      }, {
+        "name": "birthday",
+        "type": "date",
+        "placeholder": "Syntymäaika"
+      }, {
+        "name": "height",
+        "type": "number",
+        "placeholder": "Pituus"
+      }, {
+        "name": "weight",
+        "type": "number",
+        "placeholder": "Paino"
+      }, {
+        "type": "submit",
+        "text": "Rekisteröidy",
+        "name": "register"
+      }]
+    }
+  ]
+}

@@ -170,6 +170,7 @@ get_header(); ?>
                   <div class="row">
                     <div class="col">
                       <a href="/queries?form_category=minä">
+                        <h3 class="me-title">Minä</h3>
                         <img class="me-profile-btn" src="<?php bloginfo('stylesheet_url'); ?>../../gfx/profile-center-btn.png" />
                         <p><?php echo $motivationUserPoints .' / ' . $motivationMaxPoints ?></p>
                       </a>

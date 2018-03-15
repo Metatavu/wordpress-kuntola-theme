@@ -623,6 +623,25 @@ footer#colophon {
     margin-right: auto;
     text-align: center;
     margin-bottom: 0;
+
+    &.me-title {
+      position: absolute;
+      margin-top: 195px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding-left: 10px;
+    }
+
+    &:hover  {
+      color: #0b9ed1;
+    }
+
+    &::after {
+      color: #0b9ed1;
+      margin-left: 5px;
+      content: "\27E9";
+    }
     
     @media (max-width: 575.98px) { 
       font-size: 14px;

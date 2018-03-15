@@ -86,6 +86,9 @@
     <?php endif; ?>
 
   <?php if (is_front_page()) { ?>
+		<div class="container-flush text-center logoset-container">
+      <img src="<?php bloginfo('stylesheet_url'); ?>../../gfx/footer-logos.jpg"/>
+		</div>    
     <div class="container calltoaction-container">
       <div class="row">
         <div class="col-lg">

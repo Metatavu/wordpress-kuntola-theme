@@ -38,9 +38,7 @@
   <?php get_template_part( 'footer-widget' ); ?>
 
 	<footer id="colophon" class="site-footer <?php echo wp_bootstrap_starter_bg_class(); ?>" role="contentinfo">
-		<div class="container text-center">
-      <img src="<?php bloginfo('stylesheet_url'); ?>../../gfx/footer-logos.jpg"/>
-		</div>
+
 	</footer><!-- #colophon -->
 <?php endif; ?>
 </div><!-- #page -->

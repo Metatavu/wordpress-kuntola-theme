@@ -57,6 +57,10 @@ $profile-page-text-color: #fff;
 
 body {
   font-family: 'Montserrat', sans-serif;
+
+  &.home {
+    background: #eee;
+  }
   
   .ui-widget-overlay {
     background: #000;
@@ -180,6 +184,11 @@ body #page-sub-header .image-container {
     margin-right: auto;
     margin-top: 25px;
   }
+}
+
+.logoset-container {
+  background: #fff;
+  padding: 10px;
 }
 
 .calltoaction-container {
@@ -400,13 +409,7 @@ footer#footer-banner {
 }
 
 footer#colophon {
-  background: $footer-background !important;
-  margin-bottom: 34px;
-  margin-top: 0;
-
-  @media (min-width: 992px) {
-    margin-top: 63px;
-  }
+  display: none;
 }
 
 .metaform-container {

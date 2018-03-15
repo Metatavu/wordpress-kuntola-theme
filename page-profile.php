@@ -98,11 +98,17 @@ function getMetaformUserPointsByCategory($categoryName) {
 }
 
 function hasMetaformAnswers($slug) {
-  $metaforms = get_posts( ["post_type" => "metaform", "post_slug" => $slug] );
+  $metaforms = get_posts( [
+    "post_type" => "metaform", 
+    "name" => $slug,
+    "post_status" => "publish"
+  ]);
+
   $metaform = array_shift($metaforms);
   if ($metaform) {
     $metaformId = $metaform->ID;
-    return !!get_user_meta(wp_get_current_user()->ID, "metaform-$metaformId-values", true);
+    $values = get_user_meta(wp_get_current_user()->ID, "metaform-$metaformId-values", true);
+    return !!$values;
   }
 
   return null;

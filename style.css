@@ -540,4 +540,23 @@ body.metaform-taustatiedot {
   body.metaform-taustatiedot .metaform .active .page-number-header {
     color: #fff; }
 
+.query-list .list-group-item {
+  font-weight: bold;
+  padding: 20px;
+  font-size: 18px; }
+  .query-list .list-group-item .btn-container {
+    text-align: right; }
+  .query-list .list-group-item .btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0;
+    min-width: 100px; }
+  .query-list .list-group-item .btn-primary {
+    background-color: #065595;
+    border-color: #065493; }
+  .query-list .list-group-item .btn-info {
+    background-color: #02a0cc;
+    border-color: #029ec9;
+    margin-left: 10px; }
+
 /*# sourceMappingURL=style.css.map */

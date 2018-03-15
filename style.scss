@@ -40,6 +40,8 @@ $query-radio-input-checked-border-color: #fff;
 $query-page-title-color: #2d85ad;
 $query-radio-text-color: #000;
 $query-navigation-text-color: #0e75a2;
+$query-button-color-reply: #065595;
+$query-button-color-results: #02a0cc;
 $metaform-slider-handle-background: #0f74a2;
 $metaform-slider-handle-size: 40px;
 $metaform-slider-handle-label-text-color: #0f74a2;
@@ -776,6 +778,39 @@ body.metaform-taustatiedot {
         color: #fff;
       }
     }
+  }
+
+}
+
+.query-list {
+
+  .list-group-item {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 18px;
+
+    .btn-container {
+      text-align: right;
+    }
+    
+    .btn {
+      text-transform: uppercase;
+      font-weight: bold;
+      border-radius: 0;
+      min-width: 100px;
+    }
+
+    .btn-primary {
+      background-color: $query-button-color-reply;
+      border-color: darken($query-button-color-reply, 0.5);
+    }
+
+    .btn-info {
+      background-color: $query-button-color-results;
+      border-color: darken($query-button-color-results, 0.5);
+      margin-left: 10px;
+    }
+
   }
 
 }

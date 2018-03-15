@@ -73,7 +73,7 @@
       $metaformsByCategory = get_posts( ["post_type" => "metaform", "category_name" => $category] );
       ?>
       <div class="card">
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush query-list">
             <?php
             foreach ($metaformsByCategory as $metaform) {
               $metaformId = $metaform->ID;
@@ -82,8 +82,13 @@
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 <?php echo $metaform->post_title ?>
                 <div class="btn-container">
-                  <a class="btn btn-primary" href="<?php the_permalink($metaform)?>">Vastaa</a>
-                  <a class="btn btn-info <?php if (!$answered) { echo 'disabled'; } ?>"  href="<?php echo "/results?query_name=" . $metaform->post_name ?>">Tulokset</a>
+                  <?php if (!$answered) { ?>
+                    <a class="btn btn-primary" href="<?php the_permalink($metaform)?>">Vastaa</a>
+                    <a class="btn btn-info disabled" href="#">Tulokset</a>
+                  <?php } else { ?>
+                    <a class="btn btn-primary" href="<?php the_permalink($metaform)?>">Muokkaa</a>
+                    <a class="btn btn-info"  href="<?php echo "/results?query_name=" . $metaform->post_name ?>">Tulokset</a>
+                  <?php } ?>
                 </div>
               </li>
               <?php

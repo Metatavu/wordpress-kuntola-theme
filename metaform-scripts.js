@@ -196,20 +196,23 @@
   });
 
   $(document).on('click', 'input[type="submit"]', function (event) {
-    event.preventDefault();
     var button = $(event.target);
     var metaform = button.closest('.metaform-container').find('.metaform');
+    var valid = metaform[0].checkValidity();
 
-    saveMetaform(metaform, function (err) {
-      if (err) {
-        alert(err);
-      } else {
-        var saveRedirect = metaform.find('input[name="save-redirect"]').val();
-        if (saveRedirect) {
-          window.location.href = saveRedirect;
+    if (valid) {
+      event.preventDefault();
+      saveMetaform(metaform, function (err) {
+        if (err) {
+          alert(err);
+        } else {
+          var saveRedirect = metaform.find('input[name="save-redirect"]').val();
+          if (saveRedirect) {
+            window.location.href = saveRedirect;
+          }
         }
-      }
-    });
+      });
+    }
   });
 
   $(document).on('click', '.metaform-next', function (event) {

@@ -78,16 +78,21 @@
             foreach ($metaformsByCategory as $metaform) {
               $metaformId = $metaform->ID;
               $answered = !empty(get_user_meta(wp_get_current_user()->ID, "metaform-$metaformId-values", true));
+              $supportsResults = $category === "minä";
               ?>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 <?php echo $metaform->post_title ?>
                 <div class="btn-container">
                   <?php if (!$answered) { ?>
                     <a class="btn btn-primary" href="<?php the_permalink($metaform)?>">Vastaa</a>
+                    <?php if ($supportsResults) { ?> 
                     <a class="btn btn-info disabled" href="#">Tulokset</a>
+                    <?php } ?>
                   <?php } else { ?>
                     <a class="btn btn-primary" href="<?php the_permalink($metaform)?>">Muokkaa</a>
+                    <?php if ($supportsResults) { ?> 
                     <a class="btn btn-info"  href="<?php echo "/results?query_name=" . $metaform->post_name ?>">Tulokset</a>
+                    <?php } ?>
                   <?php } ?>
                 </div>
               </li>

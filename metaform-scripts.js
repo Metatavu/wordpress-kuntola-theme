@@ -136,6 +136,29 @@
     });
   }
 
+  function updateCompositeFields() {
+    var desiredUsage = 0;
+    var currentUsage = 0;
+
+    $('.service-usage-desired').each(function(index, element) {
+      desiredUsage += $(element).find('.ui-slider').slider('value');
+    });
+
+    $('.service-usage-current').each(function(index, element) {
+      currentUsage += $(element).find('.ui-slider').slider('value');
+    });
+
+    $('.current-total').text(currentUsage);
+    var currentPercentage = currentUsage - 100;
+    var currentPercentageText = currentPercentage >= 0 ? "enemmän" : "vähemmän";
+    $('.current-total-percentage').text(Math.abs(currentPercentage) + ' % ' + currentPercentageText);
+
+    $('.desired-total').text(desiredUsage);
+    var desiredPercentage = desiredUsage - 100;
+    var desiredPercentageText = desiredPercentage >= 0 ? "enemmän" : "vähemmän";
+    $('.desired-total-percentage').text(Math.abs(desiredPercentage) + ' % ' + desiredPercentageText);
+  }
+
   $(document).on('metaformcreate', function (event, ui) {
     var metaform = $(event.target);
 
@@ -164,14 +187,12 @@
             handleText.text(ui.value);
           },
           change: function( event, ui ) {
-            saveMetaform(metaform, function (err) {
-              if (err) {
-                alert(err);
-              }
-            });
+            updateCompositeFields();
           }
         });
     });
+
+    updateCompositeFields();
   });
 
   $(document).on('click', 'input[type="submit"]', function (event) {

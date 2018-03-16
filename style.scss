@@ -52,6 +52,7 @@ $profile-result-gradient-color-2: #02a0cc;
 $news-title-font-size: 32px;
 $profile-page-background-color: #000;
 $profile-page-text-color: #fff;
+$health-services-total-text-color: #065595;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
 
@@ -474,8 +475,120 @@ footer#colophon {
 
 }
 
+.health-services-metaform {
+
+  .totals {
+    h3 {
+      font-size: 26px;
+      padding-bottom: 15px;
+      font-weight: bold;
+    }
+  }
+
+  .desired-total,.current-total {
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: $health-services-total-text-color;
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  #fg-muu-syy-kylla-ei {
+    text-align: center;
+  }
+
+  #fg-muu-syy-title {    
+    h2 {
+      font-size: 22px;
+      font-weight: bold;
+      color: $health-services-total-text-color;
+      text-align: center;
+    }
+  }
+
+  #fg-muu-syy-teksti {
+    label {
+      text-align: center;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      height: 150px;
+    }
+  }
+
+  .form-check {
+
+    display: inline-block;
+    vertical-align: top;
+    width: 150px;
+
+    label {
+      position: relative;      
+    }
+
+    label span {
+      position: absolute;
+      top: 4px;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    input {
+      opacity: 0;
+    }
+    
+    label::before {
+      border: $query-radio-input-border;
+      content: '';
+      width: $query-radio-input-size - 10;
+      height: $query-radio-input-size - 10;
+      border-radius: ($query-radio-input-size - 10) / 2;
+      display: inline-block;
+      
+      @media (min-width: 992px) {
+        width: $query-radio-input-size;
+        height: $query-radio-input-size;
+        border-radius: $query-radio-input-size / 2;
+      }
+    }
+
+    input:active + label::before,
+    input:checked + label::before {
+      width: $query-radio-input-size - 10 + $query-radio-input-checked-border-width;
+      height: $query-radio-input-size - 10 + $query-radio-input-checked-border-width;
+      border-radius: ($query-radio-input-size - 10 + $query-radio-input-checked-border-width) / 2;
+      background: $query-radio-input-checked-background;
+      border-width: $query-radio-input-checked-border-width;
+      border-style: double;
+      border-color: $query-radio-input-checked-border-color;
+      margin-top: -$query-radio-input-checked-border-width / 2 - 1px;
+    }
+  }
+
+  .btn-primary {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background: #0f74a2;
+    padding: 20px 40px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0;
+    border: 0;
+    font-weight: bold;
+  }
+}
+
 .exercise-metaform {
-  
+
   .form-check {
     padding-bottom: 20px;
   }

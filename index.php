@@ -16,7 +16,38 @@ get_header(); ?>
 
 	<section id="primary" class="content-area col">
 		<main id="main" class="site-main" role="main">
+    
+    <?php 
+      if (is_front_page()) {
+        $marketingPage1 = get_post(get_theme_mod('marketing_page_1')); 
+        $marketingPage2 = get_post(get_theme_mod('marketing_page_2')); 
+        
+        if ($marketingPage1 && $marketingPage2) { 
+          $pageThumbnail1 = get_the_post_thumbnail($marketingPage1, 'full');
+          $pageThumbnail2 = get_the_post_thumbnail($marketingPage2, 'full');
+
+          ?>
+          <div class="row">
+            <div class="col-md-6">
+              <?php if ($pageThumbnail1) echo $pageThumbnail1 ?>
+              <h2 class="marketing-page-header"><?php echo $marketingPage1->post_title?></h2>
+              <?php echo apply_filters( 'the_content', $marketingPage1->post_content ); ?>
+            </div>
+
+            <div class="col-md-6">
+              <?php if ($pageThumbnail2) echo $pageThumbnail2 ?>
+              <h2 class="marketing-page-header"><?php echo $marketingPage2->post_title?></h2>
+              <?php echo apply_filters( 'the_content', $marketingPage2->post_content ); ?>
+            </div>
+          </div>
+
+        <?php 
+        }
+      }
+      ?>
+
       <div class="row">
+
 		<?php
 		if ( have_posts() ) :
 
@@ -40,8 +71,8 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
-		else :
-			get_template_part( 'template-parts/content', 'none' );
+    else :
+      
 		endif; ?>
       </div>
 		</main><!-- #main -->

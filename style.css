@@ -60,6 +60,12 @@ body #masthead .navbar-nav > li.nav-item > a {
       padding-top: 41px;
       padding-bottom: 25px; } }
 
+.marketing-page-header {
+  text-transform: uppercase;
+  font-size: 28px;
+  margin-top: 45px;
+  margin-bottom: 35px; }
+
 @media (min-width: 992px) {
   body #masthead .navbar-nav > li.nav-item > .btn-primary {
     border: 2px solid #fff;

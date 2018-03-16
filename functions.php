@@ -9,7 +9,6 @@
       $path = $wp->request;
       foreach (["profile", "metaform"] as $protectedPath) {
         $prefix = substr($path, 0, strlen($protectedPath));
-        error_log("($protectedPath) " . strlen($protectedPath) . " $path $prefix");
         if ($prefix === $protectedPath) {
           auth_redirect();
           return;

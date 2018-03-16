@@ -71,6 +71,35 @@
     ]));
   }
 
+  function kuntolaCustomizeMarketingPages($wp_customize) {
+    $section = 'kuntola_marketing_pages';
+
+    $wp_customize->add_section($section, [
+      'title' => __("Marketing pages", 'kuntola'),
+      'priority' => 30
+    ]);
+
+    $wp_customize->add_setting('marketing_page_1', [
+      'default' => '0'
+    ]);
+
+    $wp_customize->add_control(	'marketing_page_1', [
+      'type' => 'dropdown-pages',
+      'label' =>  __( 'Page', 'kuntola' ),
+      'section' => $section
+    ]);
+
+    $wp_customize->add_setting('marketing_page_2', [
+      'default' => '0'
+    ]);
+
+    $wp_customize->add_control(	'marketing_page_2', [
+      'type' => 'dropdown-pages',
+      'label' =>  __( 'Page', 'kuntola' ),
+      'section' => $section
+    ]);
+  }
+
   function kuntolaCustomizeFooterBanner($wp_customize) {
     $section = 'kuntola_footer_banner';
 
@@ -114,6 +143,7 @@
     kuntolaCustomizeHeaderImage($wp_customize);
     kuntolaCustomizeCallToAction($wp_customize);
     kuntolaCustomizeProfileBanner($wp_customize);
+    kuntolaCustomizeMarketingPages($wp_customize);
     kuntolaCustomizeFooterBanner($wp_customize);
   });
 ?>

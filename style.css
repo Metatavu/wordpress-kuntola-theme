@@ -311,7 +311,7 @@ footer#footer-banner {
         font-size: 25px; } }
   footer#footer-banner .footer-text-container .btn-primary {
     border: 2px solid #fff;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: #fff;
     padding: 23px;
     border-radius: 0;
@@ -351,6 +351,13 @@ footer#colophon {
 .testgroup-signup-metaform .form-check .form-check-label {
   font-size: 16px;
   font-weight: bold; }
+
+.background-information-metaform #fg-birthday label {
+  position: absolute;
+  color: #aaa;
+  z-index: 1;
+  right: 25px;
+  top: 17px; }
 
 .health-services-metaform .totals h3 {
   font-size: 26px;

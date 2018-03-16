@@ -468,6 +468,10 @@ footer#colophon {
 
 .metaform-container {
 
+  fieldset {
+    border: none;     
+  }
+
   .metaform-pages-container {
     font-weight: bold;    
     margin-bottom: 20px;
@@ -486,17 +490,46 @@ footer#colophon {
   .metaform-next span {
     padding-right: 10px;
   }
+
+  .slider {
+
+    .service-usage-desired .ui-slider-horizontal {
+      background: $metaform-desired-slider-background;
+    }
+
+    .ui-widget.ui-widget-content {
+      border: $metaform-slider-border;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .ui-slider .ui-slider-handle {
+      background: $metaform-slider-handle-background;
+      width: $metaform-slider-handle-size;
+      height: $metaform-slider-handle-size;
+      border-radius: $metaform-slider-handle-size / 2;
+      border: 0;
+      top: -$metaform-slider-handle-size / 4;
+
+      .slider-handle-text {
+        color: $metaform-slider-handle-label-text-color;
+        width: $metaform-slider-handle-size;
+        text-align: center;
+        margin-top: -30px;
+        display: block;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+  }
+  
 }
 
-.metaform-paged {
+.metaform-paged .metaform { 
 
   section {
     position: absolute;
   }
-
-}
-
-.metaform { 
 
   min-height: 380px;
   
@@ -504,36 +537,6 @@ footer#colophon {
     min-height: 570px;
   }
 
-  .service-usage-desired .ui-slider-horizontal {
-    background: $metaform-desired-slider-background;
-  }
-
-  .ui-widget.ui-widget-content {
-    border: $metaform-slider-border;
-    padding: 10px;
-    border-radius: 10px;
-  }
-
-  .ui-slider .ui-slider-handle {
-    background: $metaform-slider-handle-background;
-    width: $metaform-slider-handle-size;
-    height: $metaform-slider-handle-size;
-    border-radius: $metaform-slider-handle-size / 2;
-    border: 0;
-    top: -$metaform-slider-handle-size / 4;
-
-    .slider-handle-text {
-      color: $metaform-slider-handle-label-text-color;
-      width: $metaform-slider-handle-size;
-      text-align: center;
-      margin-top: -30px;
-      display: block;
-      font-weight: bold;
-      font-size: 20px;
-    }
-  }
-
-  
   h2 {
     margin-top: 0;
     text-align: center;
@@ -552,10 +555,6 @@ footer#colophon {
       margin-bottom: 80px;
       font-size: 28px;
     }
-  }
-
-  fieldset {
-    border: none;     
   }
 
   .form-check {

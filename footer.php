@@ -37,8 +37,10 @@
   
   <?php get_template_part( 'footer-widget' ); ?>
 
-	<footer id="colophon" class="site-footer <?php echo wp_bootstrap_starter_bg_class(); ?>" role="contentinfo">
-
+  <footer id="colophon" class="site-footer <?php echo wp_bootstrap_starter_bg_class(); ?>" role="contentinfo">
+    <div class="text-right">
+      <a href="/rekisteriseloste">Rekisteriseloste</a>
+    </div>
 	</footer><!-- #colophon -->
 <?php endif; ?>
 </div><!-- #page -->

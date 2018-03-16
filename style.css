@@ -318,7 +318,16 @@ footer#footer-banner {
         margin-bottom: 35px; } }
 
 footer#colophon {
-  display: none; }
+  padding: 20px; }
+  footer#colophon a {
+    color: #000;
+    font-size: 16px;
+    text-decoration: underline; }
+
+.exercise-metaform .form-check {
+  padding-bottom: 20px; }
+.exercise-metaform label {
+  display: inline; }
 
 .metaform-container fieldset {
   border: none; }

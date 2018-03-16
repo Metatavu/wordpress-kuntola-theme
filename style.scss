@@ -516,6 +516,17 @@ footer#colophon {
   }
 }
 
+.background-information-metaform {
+  #fg-birthday {
+    label {
+      position: absolute;
+      color: #aaa;
+      z-index: 1;
+      right: 25px;
+      top: 17px;
+    }
+  }
+}
 
 .health-services-metaform {
 

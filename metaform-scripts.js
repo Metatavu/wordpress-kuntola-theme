@@ -198,7 +198,7 @@
   $(document).on('click', 'input[type="submit"]', function (event) {
     var button = $(event.target);
     var metaform = button.closest('.metaform-container').find('.metaform');
-    var valid = metaform[0].checkValidity();
+    var valid = typeof metaform[0].checkValidity === 'function' ? metaform[0].checkValidity() : true;
 
     if (valid) {
       event.preventDefault();

@@ -158,8 +158,14 @@ $queryAnsweredCount = 0;
 $queryTotalCount = count($metaforms);
 
 foreach ($metaforms as $metaform) {
-  if (hasMetaformAnswers($metaform->post_name)) {
+  $postSlug = $metaform->post_name;
+  if (hasMetaformAnswers($postSlug)) {
     $queryAnsweredCount++;
+  } else {
+    if ($_GET['next-query'] === 'true') {
+      wp_redirect("/metaform/$postSlug/");
+      exit;
+    }
   }
 }
 

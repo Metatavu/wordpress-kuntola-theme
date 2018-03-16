@@ -839,7 +839,18 @@ footer#colophon {
   a {
     text-decoration: none;
   }
-  
+
+
+
+  .profile-points {
+    display: none;
+
+    &.profile-points-motivation {
+      display: block;
+    }
+
+  }
+
   h3 {
     text-transform: uppercase;
     color: $profile-page-text-color;
@@ -870,6 +881,10 @@ footer#colophon {
     @media (max-width: 575.98px) { 
       font-size: 14px;
     }
+  }
+
+  h4 {
+    color: #fff;
   }
   
   p {

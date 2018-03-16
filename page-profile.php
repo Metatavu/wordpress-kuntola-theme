@@ -114,6 +114,28 @@ function hasMetaformAnswers($slug) {
   return null;
 }
 
+function getMetaforms($categories) {
+  $categoryIds = [];
+  foreach ($categories as $category) {
+    $categoryIds[] = $category->cat_ID;
+  }
+
+  return  get_posts( [
+    "post_type" => "metaform", 
+    "post_status" => "publish",
+    "category" => implode(",", $categoryIds)
+  ]);
+}
+
+function getCategories($categorySlugs) {
+  $result = [];
+  foreach ($categorySlugs as $categorySlug) {
+    $result[] = get_category_by_slug($categorySlug);
+  }
+
+  return $result;
+}
+
 add_filter( 'body_class', function( $classes ) {
   return array_merge( $classes, ['profile-page']);
 });
@@ -128,6 +150,17 @@ add_action( 'wp_enqueue_scripts', function () {
 if (!hasMetaformAnswers("taustatiedot")) {
   wp_redirect("/metaform/taustatiedot/");
   exit;
+}
+
+$categories = getCategories(["ominaisuudet", "kayttaytyminen", "terveys", "palvelut", "mina"]);
+$metaforms = getMetaforms($categories);
+$queryAnsweredCount = 0;
+$queryTotalCount = count($metaforms);
+
+foreach ($metaforms as $metaform) {
+  if (hasMetaformAnswers($metaform->post_name)) {
+    $queryAnsweredCount++;
+  }
 }
 
 get_header(); ?>
@@ -157,13 +190,13 @@ get_header(); ?>
                     <div class="col">
                       <a href="/queries?form_category=ominaisuudet">
                         <h3>Ominaisuuteni</h3>
-                        <p><?php echo $propertiesUserPoints .' / ' . $propertiesMaxPoints ?></p>
+                        <p class="profile-points profile-points-properties"><?php echo $propertiesUserPoints .' / ' . $propertiesMaxPoints ?></p>
                       </a>
                     </div>
                     <div class="col">
                       <a href="/queries?form_category=käyttäytyminen">
                         <h3>Käyttäytymiseni</h3>
-                        <p><?php echo $behaviourUserPoints .' / ' . $behaviourMaxPoints ?></p>
+                        <p class="profile-points profile-points-behaviour"><?php echo $behaviourUserPoints .' / ' . $behaviourMaxPoints ?></p>
                       </a>
                     </div>
                   </div>
@@ -172,7 +205,7 @@ get_header(); ?>
                       <a href="/queries?form_category=minä">
                         <h3 class="me-title">Minä</h3>
                         <img class="me-profile-btn" src="<?php bloginfo('stylesheet_url'); ?>../../gfx/profile-center-btn.png" />
-                        <p><?php echo $motivationUserPoints .' / ' . $motivationMaxPoints ?></p>
+                        <p class="profile-points profile-points-motivation"><?php echo $motivationUserPoints .' / ' . $motivationMaxPoints ?></p>
                       </a>
                     </div>
                   </div>
@@ -180,14 +213,19 @@ get_header(); ?>
                     <div class="col">
                       <a href="/queries?form_category=terveys">
                         <h3>Terveyteni</h3>
-                        <p><?php echo $healthUserPoints .' / ' . $healthMaxPoints ?></p>
+                        <p class="profile-points profile-points-health"><?php echo $healthUserPoints .' / ' . $healthMaxPoints ?></p>
                       </a>
                     </div>
                     <div class="col">
                       <a href="/queries?form_category=palvelut">
                         <h3>Palveluni</h3>
-                        <p><?php echo $servicesUserPoints .' / ' . $servicesMaxPoints ?></p>
+                        <p class="profile-points profile-points-services"><?php echo $servicesUserPoints .' / ' . $servicesMaxPoints ?></p>
                       </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="text-center">Olet vastannut <?php echo "$queryAnsweredCount / $queryTotalCount"; ?> kyselyyn</h4>
                     </div>
                   </div>
 		</main><!-- #main -->

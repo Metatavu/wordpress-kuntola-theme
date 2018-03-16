@@ -569,6 +569,10 @@ footer#colophon {
   color: #fff; }
   .profile-page a {
     text-decoration: none; }
+  .profile-page .profile-points {
+    display: none; }
+    .profile-page .profile-points.profile-points-motivation {
+      display: block; }
   .profile-page h3 {
     text-transform: uppercase;
     color: #fff;
@@ -592,6 +596,8 @@ footer#colophon {
     @media (max-width: 575.98px) {
       .profile-page h3 {
         font-size: 14px; } }
+  .profile-page h4 {
+    color: #fff; }
   .profile-page p {
     color: #fff;
     margin-left: auto;

@@ -218,14 +218,50 @@ body #page-sub-header .image-container {
     #content.site-content {
       padding-top: 4.125rem; } }
 
-#primary h2.entry-title {
+.home #content.site-content {
+  background: #fff; }
+.home #primary .news-title {
+  font-size: 32px;
+  line-height: 32px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px; }
+  .home #primary .news-title .line {
+    border-bottom: 1px solid #000;
+    margin-top: 16px; }
+  .home #primary .news-title .text {
+    margin-top: -16px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px; }
+.home #primary .post {
+  background: #ebebed;
+  margin-bottom: 20px; }
+.home #primary .post-thumbnail {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 350px; }
+.home #primary h2.entry-title {
   border-bottom: none;
   text-transform: uppercase;
   font-weight: bold;
-  margin-top: 58px;
-  margin-bottom: 48px; }
-#primary .entry-content  {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 22px; }
+.home #primary .entry-content  {
   font-size: 20px; }
+.home #primary .btn-primary {
+  border: 2px solid #000;
+  border-radius: 0;
+  background-color: transparent;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  padding: 10px 20px; }
 
 footer#footer-banner {
   background-position: center center;

@@ -4,8 +4,17 @@
   require_once( __DIR__ . '/customizer.php');
 
   add_action('wp', function () {
-    if(!is_front_page() && !is_user_logged_in()) {
-      auth_redirect();
+    if (!is_front_page() && !is_user_logged_in()) {
+      global $wp;
+      $path = $wp->request;
+      foreach (["profile", "metaform"] as $protectedPath) {
+        $prefix = substr($path, 0, strlen($protectedPath));
+        error_log("($protectedPath) " . strlen($protectedPath) . " $path $prefix");
+        if ($prefix === $protectedPath) {
+          auth_redirect();
+          return;
+        }
+      }
     }
   });
 

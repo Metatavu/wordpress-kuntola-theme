@@ -49,7 +49,7 @@ $metaform-desired-slider-background: #aaebff;
 $metaform-slider-border: 1px solid #0f74a2;
 $profile-result-gradient-color-1: #065595;
 $profile-result-gradient-color-2: #02a0cc;
-
+$news-title-font-size: 32px;
 $profile-page-background-color: #000;
 $profile-page-text-color: #fff;
 
@@ -317,20 +317,74 @@ body #page-sub-header .image-container {
   }
 }
 
-#primary {
-  
-  h2.entry-title {
-    border-bottom: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 58px;
-    margin-bottom: 48px;
+.home {
+
+  #content.site-content {
+    background: #fff;
   }
 
-  .entry-content {
-    font-size: 20px;
-  }
+  #primary {
 
+    .news-title {
+      font-size: $news-title-font-size;
+      line-height: $news-title-font-size;
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 40px;
+
+      .line {
+        border-bottom: 1px solid #000;
+        margin-top: $news-title-font-size / 2;
+      }
+
+      .text {
+        margin-top: -$news-title-font-size / 2;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        background: #fff;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+    }
+
+    .post {
+      background: #ebebed;
+      margin-bottom: 20px;
+    }
+
+    .post-thumbnail {
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 350px;
+    }
+
+    h2.entry-title {
+      border-bottom: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .entry-content {
+      font-size: 20px;
+    }
+
+    .btn-primary {
+      border: 2px solid #000;
+      border-radius: 0;
+      background-color: transparent;
+      font-weight: bold;
+      color: #000;
+      text-transform: uppercase;
+      padding: 10px 20px;
+    }
+
+  }
 }
 
 footer#footer-banner {

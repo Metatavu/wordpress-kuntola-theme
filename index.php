@@ -26,7 +26,9 @@ get_header(); ?>
 				</header>
 
 			<?php
-			endif;
+      endif;
+      
+      echo '<h2 class="news-title"><div class="line"></div><span class="text">Ajankohtaista</span></h2>';
 
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();

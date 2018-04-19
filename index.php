@@ -1,4 +1,12 @@
 <?php
+  if (is_user_logged_in()) {
+    $redirect = get_home_url() . '/profile';
+    wp_redirect($redirect);
+    exit;
+  }     
+?>
+
+<?php
 /**
  * The main template file
  *

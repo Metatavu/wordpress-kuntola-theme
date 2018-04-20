@@ -96,7 +96,7 @@
           <p><?php echo get_theme_mod( 'header_calltoaction_text' );?></p>
         </div>
         <div class="col-lg login-btn-container">
-          <a class="btn btn-primary" href="/profile">Rekisteröidy</a>
+          <a class="btn btn-primary" href="<?php echo get_theme_mod( 'header_calltoaction_link' );?>">Rekisteröidy</a>
         </div>
       </div>
     </div>

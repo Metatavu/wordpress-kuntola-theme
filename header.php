@@ -96,7 +96,17 @@
           <p><?php echo get_theme_mod( 'header_calltoaction_text' );?></p>
         </div>
         <div class="col-lg login-btn-container">
-          <a class="btn btn-primary" href="/profile">Rekisteröidy</a>
+          <a class="btn btn-primary" href="
+            <?php 
+              if (!empty(get_theme_mod( 'header_calltoaction_link' ))) {
+                echo get_theme_mod( 'header_calltoaction_link' );
+              } else {
+                echo '/profile';
+              }
+            ?>
+          ">
+            Rekisteröidy
+          </a> 
         </div>
       </div>
     </div>

@@ -40,6 +40,15 @@
       'settings' => 'header_calltoaction_text',
       'type' => 'text'
     ]));
+    
+    $wp_customize->add_setting( 'header_calltoaction_link', []);
+    
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_calltoaction_link', [
+      'label' => __( 'Link href', 'kuntola' ),
+      'section' => $section,
+      'settings' => 'header_calltoaction_link',
+      'type' => 'textarea'
+    ]));
   }
 
   function kuntolaCustomizeProfileBanner($wp_customize) {

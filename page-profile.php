@@ -3,7 +3,6 @@
  * The template for displaying all profile page
  *
  */
-
 /**
  * Gets total points that user has answered to given metaform
  * 
@@ -24,13 +23,11 @@ function getMetaformUserPoints($metaform) {
     if (in_array ($key , $skipKeys)) {
       continue;
     }
-
     $result += $intvalue;
   }
   
    return $result;
 }
-
 /**
  * Gets total possible points from give metaform
  * 
@@ -49,9 +46,7 @@ function getMetaformMaxPoints($metaform) {
     error_log("Could not parse metaform $metaform->ID json");
     return 0;
   }
-
   $result = 0;
-
   $sections = $object->sections;
   foreach ($sections as $section) {
     foreach ($section->fields as $field) {
@@ -60,10 +55,8 @@ function getMetaformMaxPoints($metaform) {
       }
     }
   }
-
   return $result;
 }
-
 /**
  * Gets  total possible points from given category
  * 
@@ -79,8 +72,6 @@ function getMetaformMaxPointsByCategory($categoryName) {
   
   return $result;
 }
-
-
 /**
  * Gets total points from given category by user
  * 
@@ -96,67 +87,55 @@ function getMetaformUserPointsByCategory($categoryName) {
   
   return $result;
 }
-
 function hasMetaformAnswers($slug) {
   $metaforms = get_posts( [
     "post_type" => "metaform", 
     "name" => $slug,
     "post_status" => "publish"
   ]);
-
   $metaform = array_shift($metaforms);
   if ($metaform) {
     $metaformId = $metaform->ID;
     $values = get_user_meta(wp_get_current_user()->ID, "metaform-$metaformId-values", true);
     return !!$values;
   }
-
   return null;
 }
-
 function getMetaforms($categories) {
   $categoryIds = [];
   foreach ($categories as $category) {
     $categoryIds[] = $category->cat_ID;
   }
-
   return  get_posts( [
     "post_type" => "metaform", 
     "post_status" => "publish",
     "category" => implode(",", $categoryIds)
   ]);
 }
-
 function getCategories($categorySlugs) {
   $result = [];
   foreach ($categorySlugs as $categorySlug) {
     $result[] = get_category_by_slug($categorySlug);
   }
-
   return $result;
 }
-
 add_filter( 'body_class', function( $classes ) {
   return array_merge( $classes, ['profile-page']);
 });
-
 add_action( 'wp_enqueue_scripts', function () {
   wp_register_style('jquery-ui', '//cdn.metatavu.io/libs/jquery-ui/1.12.1/jquery-ui.min.css');
   wp_enqueue_style('jquery-ui');
   wp_enqueue_script('profile-scripts', get_stylesheet_directory_uri() . '/profile-scripts.js', ['jquery-ui-dialog']);
 } , 100);
-
 // If user has not aswered "taustatiedot" -query, we will redirect him/her to the form
 if (!hasMetaformAnswers("taustatiedot")) {
   wp_redirect("/metaform/taustatiedot/");
   exit;
 }
-
 $categories = getCategories(["ominaisuudet", "kayttaytyminen", "terveys", "palvelut", "mina"]);
 $metaforms = getMetaforms($categories);
 $queryAnsweredCount = 0;
 $queryTotalCount = count($metaforms);
-
 foreach ($metaforms as $metaform) {
   $postSlug = $metaform->post_name;
   if (hasMetaformAnswers($postSlug)) {
@@ -168,7 +147,6 @@ foreach ($metaforms as $metaform) {
     }
   }
 }
-
 get_header(); ?>
 
 	<section id="primary" class="content-area col">
@@ -179,7 +157,6 @@ get_header(); ?>
                   $healthMaxPoints = getMetaformMaxPointsByCategory("terveys");
                   $servicesMaxPoints = getMetaformMaxPointsByCategory("palvelut");
                   $motivationMaxPoints = getMetaformMaxPointsByCategory("minä");
-
                   $propertiesUserPoints = getMetaformUserPointsByCategory("ominaisuudet");
                   $behaviourUserPoints = getMetaformUserPointsByCategory("käyttäytyminen");
                   $healthUserPoints = getMetaformUserPointsByCategory("terveys");
@@ -239,5 +216,6 @@ get_header(); ?>
       </div><!-- .container -->
     </div><!-- #content -->
   </div><!-- #page -->
+  <?php wp_footer(); ?>
 </body>
 </html>

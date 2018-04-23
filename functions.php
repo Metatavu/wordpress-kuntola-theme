@@ -51,7 +51,6 @@
     wp_dequeue_style('wp-bootstrap-starter-style');
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', ['parent-style']);
     wp_enqueue_script('metaform-scripts', get_stylesheet_directory_uri() . '/metaform-scripts.js', ['jquery-effects-core', 'jquery-effects-slide', 'jquery-ui-slider']);
-    wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', 'jquery', '', true);
   } , 99);
 
 ?>

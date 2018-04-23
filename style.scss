@@ -74,6 +74,59 @@ body {
   }
 }
 
+.nav-link-desktop {
+  display: none;
+  
+  p {
+     margin: 0;
+     padding: 15px 0 30px 7px;
+     text-transform: uppercase;
+     color: #fff;
+     font-size: 14px;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: bold;
+   }
+   a {
+     color: #fff;
+     float: left;
+   }
+  
+  @media (max-width: 1200px) {
+    display: block;
+  }
+}
+
+.dropdown {
+  display: block;
+  
+  @media (max-width: 1200px) {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    li { 
+      padding: 5px 5px;
+      
+      p { 
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+        color: #000000;
+        
+        a {
+          color: #000000;
+        }
+      }
+    }
+  }
+}
+
+li {
+  a {
+    color: #000000;
+  }
+}
+
 header#masthead {
   background-color: $header-background-color;
 }
@@ -116,6 +169,30 @@ body #masthead .navbar-nav > li.nav-item > a {
     padding-bottom: 25px;
   }
   
+}
+
+body #masthead .navbar-nav > li.nav-item > .dropdown-toggle {
+  display: block;
+  
+  @media (min-width: 992px) {
+    padding-top: 40px;
+    padding-right: 5px;
+    padding-bottom: 0;
+  }
+}
+
+body #masthead .navbar-nav > li.nav-item > .dropdown-menu {
+  top: 70% !important;
+  left: auto !important;
+  right: 0;
+}
+
+body #masthead .navbar-nav > li.nav-item > .dropdown-toggle::after {
+  display: none !important;
+  
+  @media (min-width: 1200px) {
+    display: none;
+  }
 }
 
 .marketing-page-header {

@@ -37,7 +37,7 @@
         <li class="nav-item nav-link-desktop">'. $content .'</li>
         <li class="nav-item nav-link-desktop"><a href="'. wp_logout_url() .'">Kirjaudu ulos</a></li>';
       } else {
-        $items .= '<li><a href="'. wp_logout_url() .'">Kirjaudu ulos</a></li>';
+        $items .= '<li class="nav-item"><a class="nav-link" href="'. wp_logout_url() .'">Kirjaudu ulos</a></li>';
       }  
     } elseif (!is_user_logged_in() && $args->theme_location == 'primary') {
       $items .= '<li class="nav-item"><a class="btn btn-primary" href="/profile">Kirjaudu sisään</a></li>';

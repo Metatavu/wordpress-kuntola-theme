@@ -71,9 +71,30 @@
               <div class="row">
                 <div class="col-lg text-container">
                   <?php if (!empty(get_theme_mod( 'header_banner_title_setting' ))) { ?>
-                  <div class="row">
+                  <div class="row  header-banner-container">
                     <div class="col">
-                      <h1><?php echo get_theme_mod( 'header_banner_title_setting' );?></h1>
+                      <h1 class="header-banner-heading"><?php echo get_theme_mod( 'header_banner_title_setting' );?></h1>
+                    </div>
+                    <div class="container calltoaction-container">
+                      <div class="row">
+                        <div class="col-lg">
+                          <h2 class="call-to-action-heading"><?php echo get_theme_mod( 'header_calltoaction_title' );?></h2>
+                          <p><?php echo get_theme_mod( 'header_calltoaction_text' );?></p>
+                        </div>
+                        <div class="col-lg login-btn-container">
+                          <a class="btn btn-primary header-banner-button" href="
+                            <?php 
+                              if (!empty(get_theme_mod( 'header_calltoaction_link' ))) {
+                                echo get_theme_mod( 'header_calltoaction_link' );
+                              } else {
+                                echo '/profile';
+                              }
+                            ?>
+                          ">
+                            Rekisteröidy
+                          </a> 
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <?php } ?>
@@ -93,29 +114,6 @@
         </div>
     <?php endif; ?>
 
-  <?php if (is_front_page()) { ?>    
-    <div class="container calltoaction-container">
-      <div class="row">
-        <div class="col-lg">
-          <h2><?php echo get_theme_mod( 'header_calltoaction_title' );?></h2>
-          <p><?php echo get_theme_mod( 'header_calltoaction_text' );?></p>
-        </div>
-        <div class="col-lg login-btn-container">
-          <a class="btn btn-primary" href="
-            <?php 
-              if (!empty(get_theme_mod( 'header_calltoaction_link' ))) {
-                echo get_theme_mod( 'header_calltoaction_link' );
-              } else {
-                echo '/profile';
-              }
-            ?>
-          ">
-            Rekisteröidy
-          </a> 
-        </div>
-      </div>
-    </div>
-  <?php } ?>
 
   <?php if (is_front_page()) { ?>
     <?php $profilePage = get_post(get_theme_mod('profile_banner_page')); ?>

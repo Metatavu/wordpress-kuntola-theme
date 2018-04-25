@@ -232,9 +232,7 @@ body #page-sub-header .container h1 {
   color: $subheader-text-color;
   font-size: 24px;
   padding: 1px 10px;
-  text-align: left;
   margin: 1px;
-  float: left;
   line-height: 37px;
   font-weight: 900;
   letter-spacing: 1px;
@@ -242,20 +240,33 @@ body #page-sub-header .container h1 {
   @media (min-width: 576px) {
     letter-spacing: 1px;
     font-size: 36px;
-    padding: 1px 25px;
+    padding-left: 0;
     line-height: 48px;
   }
   
   @media (min-width: 992px) {
     letter-spacing: 3px;
     font-size: 48px;
+    padding-left: 0;
+  }
+}
+
+body #page-sub-header .container h1:not(.header-banner-heading) {
+  text-align: left;
+  float: left;
+  
+  @media (min-width: 576px) {
+    padding: 1px 25px;
+  }
+  
+  @media (min-width: 992px) {
     padding: 13px 25px;
   }
 }
 
 body #page-sub-header .text-container {
   @media (min-width: 992px) {
-    margin-top: 200px;
+    margin-top: 18px;
   }
 }
 
@@ -281,6 +292,37 @@ body #page-sub-header .image-container {
   
   @media (min-width: 576px) {
     padding-top: 70px;
+  }
+}
+
+.header-banner-container {
+  background-color: #fff;
+  padding-bottom: 15px;
+}
+
+.header-banner-button {
+  float: left;
+}
+
+.calltoaction-container h1, .header-banner-heading {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+  text-align: center;
+
+  @media (min-width: 576px) {
+    font-size: 34px;
+  }
+  
+  @media (min-width: 992px) {
+    text-align: left;
+  }
+}
+
+.header-banner-heading {
+  @media (min-width: 992px) {
+    padding-left: 0;
   }
 }
 
@@ -336,7 +378,15 @@ body #page-sub-header .image-container {
   text-decoration: none;
   
   @media (min-width: 992px) {
-    margin-left: 60px;
+    float: left;
+    margin-left: 0;
+    font-size: 27px;
+    padding: 35px 40px;
+  }
+  
+  @media (max-width: 992px) {
+    float: none;
+    margin: 0 auto;
     font-size: 27px;
     padding: 35px 40px;
   }

@@ -954,6 +954,26 @@ footer#colophon {
 
 }
 
+.metaform-paged.saving {
+  cursor: wait;
+
+  .form-check {
+    label::after {
+      border-color: #ccc;
+    } 
+
+    input:active + label::after,
+    input:checked + label::after {
+      background: #ccc;
+    }
+  }
+
+  .metaform-prev, 
+  .metaform-next {
+    color: #ccc;
+  }
+}
+
 .result-header-container {
   
   h2, h1 {

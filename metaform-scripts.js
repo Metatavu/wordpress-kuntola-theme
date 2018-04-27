@@ -21,10 +21,13 @@
   }
 
   function changeMetaformPage(metaform, delta) {
-    var id = $(metaform).closest('.metaform-container').attr('data-id');
+    var metaformContainer = $(metaform).closest('.metaform-container');
+    var id = metaformContainer.attr('data-id');
     $(metaform).metaform('option', 'animation.hide.options.direction', delta > 0 ? 'left' : 'right');
     $(metaform).metaform('option', 'animation.show.options.direction', delta > 0 ? 'right' : 'left');
+    
     setMetaformPage(metaform, getMetaformPage(metaform) + delta, function () {
+      metaformContainer.addClass('saving');
       saveMetaform(metaform, function (saveErr) {
         if (saveErr) {
           alert(saveErr);
@@ -116,6 +119,14 @@
       }
     });
 
+    $(document).on('click', '.saving .form-check-input', function (event) {
+      event.preventDefault();
+    });
+
+    $(document).on('click', '.saving .form-check-input', function (event) {
+      event.preventDefault();
+    });
+
     $(document).on('change', '.form-check-input', function (event) {
       event.preventDefault();
       var input = $(event.target);
@@ -127,8 +138,12 @@
       event.preventDefault();
       var input = $(event.target);
       var metaform = input.closest('.metaform');
-      
+      var metaformContainer = $(input).closest('.metaform-container');
+      metaformContainer.addClass('saving');
+
       saveMetaform(metaform, function (err) {
+        metaformContainer.removeClass('saving');
+        
         if (err) {
           alert(err);
         }
@@ -218,12 +233,20 @@
   $(document).on('click', '.metaform-next', function (event) {
     event.preventDefault();
     var link = $(event.target);
+    if (link.closest('.saving').length) {
+      return;
+    }
+
     changeMetaformPage(link.closest('.metaform-container').find('.metaform'), +1);
   });
 
   $(document).on('click', '.metaform-prev', function (event) {
     event.preventDefault();
     var link = $(event.target);
+    if (link.closest('.saving').length) {
+      return;
+    }
+    
     changeMetaformPage(link.closest('.metaform-container').find('.metaform'), -1);
   });
 

@@ -119,6 +119,13 @@ function getCategories($categorySlugs) {
   }
   return $result;
 }
+
+function getCoins() {
+  $userId = wp_get_current_user()->ID;
+  $result = intval(get_user_meta($userId, "hyvio_coins", true));
+  return $result ? $result : 0;
+}
+
 add_filter( 'body_class', function( $classes ) {
   return array_merge( $classes, ['profile-page']);
 });
@@ -152,6 +159,7 @@ get_header(); ?>
 	<section id="primary" class="content-area col">
           
                 <?php
+                  $coins = getCoins();
                   $propertiesMaxPoints = getMetaformMaxPointsByCategory("ominaisuudet");
                   $behaviourMaxPoints = getMetaformMaxPointsByCategory("käyttäytyminen");
                   $healthMaxPoints = getMetaformMaxPointsByCategory("terveys");
@@ -169,6 +177,12 @@ get_header(); ?>
                     echo '<main id="main" class="site-main not-answered" role="main">';
                   }
                 ?>
+                <div class="row">
+                  <div class="col">
+                    <h4 class="text-center">Sinulla on <?php echo "$coins"; ?> <img class="profile-coin-image" src="<?php bloginfo('stylesheet_url'); ?>../../gfx/hyviocoin.png" /> hyviökolikkoa</h4>
+                  </div>
+                </div>
+
                   <div class="row">
                     <div class="col">
                       <a href="/queries?form_category=ominaisuudet">

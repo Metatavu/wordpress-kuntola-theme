@@ -17,6 +17,22 @@
     }
   });
 
+  add_action('after_metaform_save_reply', function ($id) {
+    $userId = wp_get_current_user()->ID;
+    if ($userId) {
+      $hasReceivedCoins = get_user_meta($userId, "metaform-$id-received-coins", true) === "true";
+      if (!$hasReceivedCoins) {
+        $existingCoins = intval(get_user_meta($userId, "hyvio_coins", true));
+        if (!$existingCoins) {
+          $existingCoins = 0;
+        }
+
+        update_user_meta($userId, "hyvio_coins", $existingCoins + 20);
+        update_user_meta($userId, "metaform-$id-received-coins", "true");
+      }
+    }
+  });
+
   add_filter('show_admin_bar', function () {
     return false;
   });

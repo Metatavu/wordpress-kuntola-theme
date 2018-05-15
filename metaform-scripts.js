@@ -28,7 +28,7 @@
     
     setMetaformPage(metaform, getMetaformPage(metaform) + delta, function () {
       metaformContainer.addClass('saving');
-      saveMetaform(metaform, function (saveErr) {
+      saveMetaform(metaform, true, function (saveErr) {
         if (saveErr) {
           alert(saveErr);
         } else {
@@ -41,7 +41,7 @@
           });    
         }
       });     
-    });
+    }); 
   }
 
   function saveMetaformRevision(metaform, callback) {
@@ -59,7 +59,7 @@
     });
   }
 
-  function saveMetaform(metaform, callback) {
+  function saveMetaform(metaform, updateExisting, callback) {
     var valuesArray = metaform.metaform('val', true); 
     var id = metaform.closest('.metaform-container').attr('data-id');
     var ajaxurl = metaformwp.ajaxurl;
@@ -74,6 +74,7 @@
     $.post(ajaxurl, {
       'action': 'save_metaform',
       'id': id,
+      'updateExisting': updateExisting ? 'true': 'false',
       'values': JSON.stringify(values)
     }, function (response) { 
       callback(null);
@@ -139,9 +140,11 @@
       var input = $(event.target);
       var metaform = input.closest('.metaform');
       var metaformContainer = $(input).closest('.metaform-container');
+      var updateExisting = $(metaform).attr('data-update-existing') === 'true';
       metaformContainer.addClass('saving');
-
-      saveMetaform(metaform, function (err) {
+      
+      saveMetaform(metaform, updateExisting, function (err) {
+        $(metaform).attr('data-update-existing', 'true');
         metaformContainer.removeClass('saving');
         
         if (err) {
@@ -217,7 +220,7 @@
 
     if (valid) {
       event.preventDefault();
-      saveMetaform(metaform, function (err) {
+      saveMetaform(metaform, false, function (err) {
         if (err) {
           alert(err);
         } else {

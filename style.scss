@@ -1241,3 +1241,30 @@ body.metaform-taustatiedot {
   }
 
 }
+
+#tool-tip {
+  position: relative;
+  top: -17px;
+  left: -14px;
+}
+
+#tooltip-text {
+  display: none;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  width: 400px;
+  max-width: 100%;
+  color: #000000;
+  border-radius: 3px;
+  padding: 5px 0;
+  left: 0; 
+  right: 0; 
+  position: absolute;
+  margin: 10px auto;
+  z-index: 1;
+}
+
+#tool-tip:hover + #tooltip-text {
+  display: block;
+}

@@ -179,7 +179,16 @@ get_header(); ?>
                 ?>
                 <div class="row">
                   <div class="col">
-                    <h4 class="text-center">Sinulla on <?php echo "$coins"; ?> <img class="profile-coin-image" src="<?php bloginfo('stylesheet_url'); ?>../../gfx/hyviocoin.png" /> hyviökolikkoa</h4>
+                    <h4 class="text-center">
+                      <?php echo "$coins"; ?> 
+                      <img class="profile-coin-image" src="<?php bloginfo('stylesheet_url'); ?>../../gfx/hyviocoin.png" />
+                      <span id="tool-tip">
+                        <i class="fa fa-question-circle"></i>
+                      </span>
+                      <span id="tooltip-text">
+                        Saat lisää Hyviökolikoita vastaamalla Hyviön kyselyihin. Hyviökolikoiden määrä kertoo hyvinvointipääomasta, jota sinulle kertyy kun opit omasta hyvinvoinnistasi vastaamalla Hyviön kyselyihin.
+                      </span>
+                    </h4>
                   </div>
                 </div>
 

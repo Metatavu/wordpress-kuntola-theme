@@ -254,6 +254,25 @@
   });
 
   $(document).ready(function () {
+    
+    var chart = null;
+    var chartLabels = null;
+
+    function updateChartUserData(userdata) {
+      chart.data.datasets[0].data = userdata;
+      chart.update();
+    }
+
+    $('#metaform-average-select').change(function() {
+      var valueString = $(this).val();
+      var selectedValues = JSON.parse(valueString);
+      var newUserValues = [];
+      $.each(chartLabels, function (index, label) {
+        newUserValues.push(parseFloat(selectedValues[label]) || 0);
+      });
+      updateChartUserData(newUserValues);
+    });
+    
     $('#metaform-averages').each(function (index, element) {
       var ctx = element.getContext('2d');
       var values = JSON.parse($(element).attr('data-values'));
@@ -291,19 +310,19 @@
           }]
         }
       };
-      var labels = values.categories;
+      chartLabels = values.categories;
       var datasUserAverages = [];
       var datasAverages = [];
 
-      $.each(labels, function (index, label) {
+      $.each(chartLabels, function (index, label) {
         datasUserAverages.push(parseFloat(values.userAverages[label]) || 0);
         datasAverages.push(parseFloat(values.averages[label]) || 0);
       });
 
-      var chart = new Chart(ctx, {
+      chart = new Chart(ctx, {
         type: 'horizontalBar',
         data: {
-          labels: labels,
+          labels: chartLabels,
           datasets: [{
             label: 'Sinä',
             data: datasUserAverages,
@@ -317,6 +336,7 @@
         options: options
       });
     });
+    
   });
 
 })(jQuery);

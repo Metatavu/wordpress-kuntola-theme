@@ -147,6 +147,7 @@
         "koska-koen-sen-hauskana" => "Huvi ja nautinto",
         "ollakseni-ystavieni-kanssa" => "Yhteenkuuluvuus",
         "ollakseni-paremmassa-kunnossa-kuin-muut" => "Kilpailullisuus/ego",
+        "ollakseni-paremmassa-kunnossa-kuin-muut-2" => "Kilpailullisuus/ego",
         "koska-se-auttaa-minua-yllapitamaan-kehoni-jantevana" => "Ulkonäkö"
       ];
 
@@ -177,9 +178,17 @@
       if (!empty($metaform)) {
         $id = $metaform->ID;
 
+        $replies = null;
         $values = getMetaformValues($id);
-
         $userValues = json_decode(get_user_meta(wp_get_current_user()->ID, "metaform-$id-values", true), true);
+        $metaformApiId = get_post_meta($id, "metaform-api-id", true);
+        if ($metaformApiId && class_exists('\Metatavu\Metaform\Api\ApiClient') && class_exists('\Metatavu\Metaform\Settings\Settings')) {
+          $realmId = \Metatavu\Metaform\Settings\Settings::getValue("realm-id");
+          $repliesApi = \Metatavu\Metaform\Api\ApiClient::getRepliesApi();
+          $ssoUserId = get_user_meta(wp_get_current_user()->ID, "openid-connect-generic-subject-identity", true);
+
+          $replies = array_reverse($repliesApi->listReplies($realmId, $metaformApiId, $ssoUserId, null, null, null, null, "true", null));
+        }
 
         $averages = getMetaformCategoryAverageValues($categoryMap, $values);
         $userAverages = getMetaformCategoryAverageValues($categoryMap, [$userValues]);
@@ -192,6 +201,7 @@
             $highestCategoryValue = $categoryValue;
           }
         }
+        
         ?>
         <div class="jumbotron jumbotron-fluid result-header-container" style="background-image: url(<?php echo esc_attr(get_theme_mod('profile_banner_background' )); ?>)">
           <div class="container">
@@ -214,6 +224,22 @@
         <?php
         echo '<div class="container">';
         echo '<h1 class="center-block text-center">Tulokset</h1>';
+        if (!is_null($replies)) {
+          echo '<div class="form-group"><label for="metaform-average-select">Vastauskerta</label><select id="metaform-average-select" class="form-control">';
+          foreach ($replies as $reply) {
+            $revision = $reply->getRevision();
+            $optionTitle = 'vastaus';
+            $selected = "";
+            if (!isset($revision)) {
+              $optionTitle = 'viimeisin';
+              $selected = 'selected="selected"';
+            } else {
+              $optionTitle = date_format($revision, 'd-m-Y H:i:s');
+            }
+            echo sprintf('<option %s value="%s">%s</option>', $selected, htmlspecialchars(json_encode(getMetaformCategoryAverageValues($categoryMap, [$reply->getData()]))), $optionTitle);
+          }
+          echo '</select></div>';
+        }
         echo sprintf('<canvas id="metaform-averages" width="400" height="400" data-values="%s"/>', htmlspecialchars(json_encode([
           userAverages => $userAverages,
           averages => $averages,

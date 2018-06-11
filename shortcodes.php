@@ -223,6 +223,9 @@
         
         <?php
         echo '<div class="container">';
+        echo '<div class="row"><div class="col" align="center">';
+        echo '<a href="/profile?next-query=true" class="next-query"><button class="btn btn-primary">Seuraava kysely</button></a>';
+        echo '</div></div>';
         echo '<h1 class="center-block text-center">Tulokset</h1>';
         if (!is_null($replies)) {
           echo '<div class="form-group"><label for="metaform-average-select">Vastauskerta</label><select id="metaform-average-select" class="form-control">';
